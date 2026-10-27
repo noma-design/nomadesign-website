@@ -4,7 +4,9 @@ import { SiteShell } from "@/components/SiteShell";
 import { featuredProjects } from "@/lib/home";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    absolute: "Noma design",
+  },
 };
 
 export default function HomePage() {

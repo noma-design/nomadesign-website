@@ -15,13 +15,40 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const siteUrl = "https://www.nomadesign.xyz";
+const siteTitle = "Noma design";
+const siteDescription =
+  "Product design portfolio — from defining the problem to designing and shipping the solution.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Noma design",
-    template: "%s · Noma design",
+    default: siteTitle,
+    template: `%s · ${siteTitle}`,
   },
-  description:
-    "Product design portfolio — from defining the problem to designing and shipping the solution.",
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: siteTitle,
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Noma Design portfolio website mockup",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/og.jpg"],
+  },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
