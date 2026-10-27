@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   },
   description:
     "Product design portfolio — from defining the problem to designing and shipping the solution.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 const themeInitScript = `
