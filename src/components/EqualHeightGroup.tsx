@@ -27,6 +27,7 @@ export function EqualHeightGroup({
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
+    const container: HTMLDivElement = root;
 
     let frame = 0;
 
@@ -37,7 +38,7 @@ export function EqualHeightGroup({
 
     function sync() {
       const items = [
-        ...root.querySelectorAll<HTMLElement>(itemSelector),
+        ...container.querySelectorAll<HTMLElement>(itemSelector),
       ];
       if (items.length === 0) return;
 
@@ -56,7 +57,7 @@ export function EqualHeightGroup({
         el.style.height = `${max}px`;
       }
 
-      observer.observe(root);
+      observer.observe(container);
     }
 
     function scheduleSync() {
@@ -72,7 +73,7 @@ export function EqualHeightGroup({
       cancelAnimationFrame(frame);
       observer.disconnect();
       window.removeEventListener("resize", scheduleSync);
-      for (const el of root.querySelectorAll<HTMLElement>(itemSelector)) {
+      for (const el of container.querySelectorAll<HTMLElement>(itemSelector)) {
         el.style.height = "";
       }
     };
