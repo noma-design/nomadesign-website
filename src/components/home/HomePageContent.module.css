@@ -1,0 +1,1066 @@
+/* Home — Figma 38:781 / 366:1238
+   Tokens: Space Grotesk display, Inter body; space-5/6/7/9; radius-md/lg/full;
+   accent-lime, accent-lime-card, accent-location; surface/border/text tokens */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+  width: 100%;
+}
+
+/* ─── Hero ─────────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.heroCopy {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--space-7);
+  min-width: 0;
+  justify-content: center;
+}
+
+.projectGrid > .projectCard {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.heroIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 6px 10px 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Light — Figma 415:4942 */
+:global([data-theme="light"]) .roleBadge {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(215, 215, 215, 0.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.02);
+}
+
+.roleDot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--accent-lime);
+  flex-shrink: 0;
+}
+
+:global([data-theme="light"]) .roleDot {
+  background: #16e31d;
+}
+
+.roleLabel {
+  padding: 6px 10px 6px 4px;
+  font-family: var(--font-body);
+  font-size: var(--type-meta-size);
+  font-weight: 700;
+  line-height: var(--type-meta-leading);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Typography/Desktop/Small meta */
+:global([data-theme="light"]) .roleLabel {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-hero-size);
+  font-weight: 700;
+  line-height: var(--type-hero-leading);
+  color: var(--text-primary);
+}
+
+.titleMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.body {
+  margin: 0;
+  font-family: var(--font-body);
+  /* Bigger text */
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 700;
+  line-height: var(--type-body-leading);
+  color: var(--accent-location);
+  white-space: nowrap;
+}
+
+.locationIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--accent-location);
+}
+
+.ctaRow {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: stretch;
+  gap: var(--space-5);
+  width: max-content;
+  max-width: 100%;
+  padding: var(--space-1) 0;
+}
+
+.ctaRow .btnPrimary,
+.ctaRow .btnSecondary {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 56px;
+  padding: 16px 24px;
+  white-space: nowrap;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 56px;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    180deg,
+    var(--button-primary-fill-start) 0%,
+    var(--button-primary-fill-end) 100%
+  );
+  color: var(--button-primary-text);
+  font-family: var(--font-body);
+  font-size: var(--type-button-size);
+  font-weight: 600;
+  line-height: var(--type-button-leading);
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btnPrimary:hover:not([data-suppress-hover]) {
+    opacity: 0.92;
+  }
+}
+
+.btnPrimary[data-pressed] {
+  transform: scale(0.98);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: fit-content;
+  min-height: 56px;
+  padding: 16px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--button-secondary-border);
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  font-family: var(--font-body);
+  font-size: var(--type-button-size);
+  font-weight: 600;
+  line-height: var(--type-button-leading);
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btnSecondary:hover:not([data-suppress-hover]) {
+    background: var(--button-secondary-hover-bg);
+    border-color: var(--button-secondary-border-end);
+  }
+}
+
+.btnSecondary[data-pressed] {
+  transform: scale(0.98);
+}
+
+/* ─── Floating pillars ─────────────────────────────────── */
+
+.pillars {
+  position: relative;
+  flex-shrink: 0;
+  width: 600px;
+  height: 480px;
+}
+
+.pillarsInner {
+  position: absolute;
+  inset: 0;
+}
+
+.pillar {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatY 4.4s ease-in-out infinite;
+}
+
+.pillarCard {
+  box-sizing: border-box;
+  width: 220px;
+  margin: 0;
+  padding: 32px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border-default);
+  background: var(--background-surface);
+  transform: rotate(var(--pillar-rotate, 0deg));
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* Light — Figma 266:632: fill border/default, stroke toggle/track #d4d4d466,
+   text/primary + Typography/Desktop/Body */
+:global([data-theme="light"]) .pillarCard {
+  background: #e5e5e5;
+  border-color: rgba(212, 212, 212, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.pillarCard p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+  letter-spacing: 0;
+  color: var(--text-primary);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pillarLabel {
+  display: block;
+}
+
+.pillarDetail {
+  display: none;
+}
+
+.pillar:hover .pillarLabel,
+.pillar:focus-within .pillarLabel {
+  display: none;
+}
+
+.pillar:hover .pillarDetail,
+.pillar:focus-within .pillarDetail {
+  display: block;
+}
+
+.pillar:hover .pillarCard,
+.pillar:focus-within .pillarCard {
+  background: var(--background-surface);
+  border-color: var(--border-default);
+}
+
+:global([data-theme="light"]) .pillar:hover .pillarCard,
+:global([data-theme="light"]) .pillar:focus-within .pillarCard {
+  background: #f5f5f5;
+  border-color: rgba(212, 212, 212, 0.7);
+}
+
+.pillarA {
+  left: 40px;
+  top: 81px;
+  animation-delay: 0s;
+}
+
+.pillarB {
+  left: 375px;
+  top: 89px;
+  animation-delay: -1.2s;
+}
+
+.pillarC {
+  left: 322px;
+  top: 278px;
+  animation-delay: -2.4s;
+}
+
+.pillarD {
+  left: 26px;
+  top: 296px;
+  animation-delay: -3.6s;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2px, -6px);
+  }
+}
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+  background: var(--border-default);
+  border-radius: 1px;
+}
+
+.decorLine1 {
+  left: 7px;
+  top: 263px;
+  width: 111px;
+  height: 2px;
+  transform: rotate(22deg);
+}
+
+.decorLine2 {
+  left: 300px;
+  top: 141px;
+  width: 57px;
+  height: 2px;
+  transform: rotate(-45deg);
+}
+
+.decorLine3 {
+  left: 251px;
+  top: 255px;
+  width: 57px;
+  height: 2px;
+  transform: rotate(-45deg);
+}
+
+.decorLine4 {
+  left: 495px;
+  top: 244px;
+  width: 57px;
+  height: 2px;
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar {
+    animation: none;
+  }
+}
+
+/* ─── Featured projects ────────────────────────────────── */
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  width: 100%;
+  padding: 10px 0;
+  scroll-margin-top: calc(var(--nav-height) + 48px);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-section-size);
+  font-weight: 700;
+  line-height: var(--type-section-leading);
+  color: var(--text-primary);
+  max-width: 661px;
+}
+
+.projectGrid {
+  display: flex;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.projectCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  border: none;
+  overflow: hidden;
+  background: #838384;
+}
+
+:global([data-theme="light"]) .projectCard {
+  background: #e5e5e5;
+}
+
+.projectMedia {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  /* Isolate from any ancestor transform so fill sizing is stable on first paint */
+  transform: translateZ(0);
+}
+
+.projectCover {
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.28s ease-out;
+}
+
+.projectCard:hover .projectCover {
+  transform: scale(1.03);
+}
+
+:global([data-theme="light"]) .projectCard {
+  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.06);
+}
+
+.projectScrim {
+  position: absolute;
+  inset: 0;
+  /* Match Figma text-scrim without a hard black band at the bottom */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.5) 55%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+  pointer-events: none;
+}
+
+.projectTag {
+  position: absolute;
+  top: 28px;
+  left: 25px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
+  font-family: var(--font-body);
+  font-size: var(--type-meta-size);
+  font-weight: 700;
+  line-height: var(--type-meta-leading);
+  color: #f5f5f5;
+}
+
+.projectText {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  flex: 1;
+  width: 100%;
+  padding: 0 var(--space-5);
+  text-align: center;
+  color: #f5f5f5;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.projectTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  /* Title heading */
+  font-size: var(--type-title-size);
+  font-weight: 700;
+  line-height: var(--type-title-leading);
+  color: #f5f5f5;
+}
+
+.projectDescription {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 600;
+  line-height: var(--type-body-leading);
+  color: #f5f5f5;
+}
+
+.projectArrow {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
+  transition: background 0.25s ease-out, border-color 0.25s ease-out;
+}
+
+:global([data-theme="light"]) .projectArrow {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(215, 215, 215, 0.15);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.02);
+}
+
+.projectCard:hover .projectArrow {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+:global([data-theme="light"]) .projectCard:hover .projectArrow {
+  background: rgba(215, 215, 215, 0.35);
+}
+
+.projectArrow img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.25s ease-out;
+}
+
+.projectCard:hover .projectArrow img {
+  transform: translate(2px, -2px);
+}
+
+.sectionAction {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* ─── Testimonials ─────────────────────────────────────── */
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  width: 100%;
+  padding: var(--space-3) 0;
+}
+
+.testimonialGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.testimonialRow {
+  display: flex;
+  gap: var(--space-5);
+  width: 100%;
+  align-items: stretch;
+}
+
+.testimonialRow > * {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+}
+
+.testimonialRow > * > article {
+  width: 100%;
+}
+
+.quoteCard,
+.statCard {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  width: 100%;
+  min-height: 382px;
+  height: 100%;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+}
+
+.quoteCard {
+  background: var(--background-surface);
+  border: 0.4px solid var(--border-default);
+}
+
+:global([data-theme="light"]) .quoteCard {
+  border-color: rgba(10, 10, 10, 0.06);
+}
+
+:global([data-theme="light"]) .avatar {
+  border-color: rgba(10, 10, 10, 0.08);
+}
+
+.quoteText {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+  color: var(--text-primary);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.authorName {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 700;
+  line-height: var(--type-body-leading);
+  color: var(--text-primary);
+}
+
+.authorRole {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-meta-size);
+  font-weight: 700;
+  line-height: var(--type-meta-leading);
+  color: var(--text-secondary);
+}
+
+.statInverse {
+  background: var(--text-primary);
+  color: var(--button-primary-text);
+}
+
+.statLime {
+  background: var(--accent-lime-card);
+  color: #0a0a0a;
+}
+
+.statBody {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.statTitleLarge {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.statTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4vw, 56px);
+  font-weight: 700;
+  line-height: var(--type-hero-leading);
+}
+
+.statSubtitle {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 500;
+  line-height: var(--type-body-leading);
+}
+
+/* Match footer “View PDF” — underline on hover/focus/active */
+.linkedinCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 16px 0;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-button-size);
+  font-weight: 600;
+  line-height: var(--type-button-leading);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.linkedinCta:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .linkedinCta:hover:not([data-suppress-hover]) {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+.linkedinCta[data-pressed] {
+  text-decoration: underline;
+}
+
+.externalIcon {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+/* ─── Tablet ≤1199 — Figma 1155:10003 (light + dark same layout) ─ */
+
+@media (max-width: 1199px) {
+  .page {
+    gap: var(--space-8);
+  }
+
+  /* Hero: stacked intro → CTAs → 2×2 pillars */
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-6);
+  }
+
+  .heroCopy {
+    gap: var(--space-6);
+  }
+
+  .heroIntro {
+    gap: var(--space-5);
+  }
+
+  .roleBadge {
+    min-height: 48px;
+    padding: 10px 18px;
+    gap: 8px;
+  }
+
+  .roleLabel {
+    padding: 0;
+    font-weight: 500;
+  }
+
+  .titleBlock {
+    gap: var(--space-5);
+  }
+
+  .ctaRow {
+    gap: var(--space-5);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    min-height: 52px;
+    padding: 14px 24px;
+  }
+
+  /* Pillars become a 2×2 grid (not absolute desktop composition) */
+  .pillars {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    padding: var(--space-5) var(--space-8);
+  }
+
+  .pillarsInner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    inset: auto;
+  }
+
+  .pillar {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100%;
+    animation: none;
+  }
+
+  .pillarA {
+    order: 1;
+  }
+
+  .pillarB {
+    order: 2;
+  }
+
+  .pillarD {
+    order: 3;
+  }
+
+  .pillarC {
+    order: 4;
+  }
+
+  .pillarCard {
+    width: 100%;
+    height: 88px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pillarDetail {
+    display: none !important;
+  }
+
+  .pillarLabel {
+    display: block !important;
+  }
+
+  .decor {
+    display: none;
+  }
+
+  /* Featured: full-bleed stacked cards */
+  .featured {
+    gap: var(--space-6);
+    padding: 0;
+  }
+
+  .sectionTitle {
+    max-width: none;
+  }
+
+  .projectGrid {
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .projectCard {
+    width: 100%;
+    height: 480px;
+    min-height: 480px;
+  }
+
+  /* Testimonials: 2-col grid — DOM order yields
+     quotes | quotes → stats | stats → quotes | quotes */
+  .testimonials {
+    gap: var(--space-6);
+    padding: 0;
+  }
+
+  .testimonialGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .testimonialRow {
+    display: contents;
+  }
+
+  .testimonialRow > * {
+    flex: none;
+    min-width: 0;
+    display: flex;
+  }
+
+  .quoteCard,
+  .statCard {
+    min-height: 374px;
+    padding: var(--space-5);
+  }
+
+  .authorName {
+    font-weight: 400;
+  }
+
+  .authorRole {
+    font-weight: 500;
+  }
+
+  .statTitleLarge {
+    font-size: 64px;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+
+  .statTitle {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  :global([data-theme="light"]) .statInverse {
+    background: #3a3636;
+    color: #f5f5f5;
+  }
+}
+
+/* ─── Mobile ≤767 ──────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .page {
+    gap: var(--space-8);
+  }
+
+  .ctaRow {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: unset;
+    width: 100%;
+    gap: var(--space-3);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pillars {
+    display: none;
+  }
+
+  .featured,
+  .testimonials {
+    gap: var(--space-6);
+  }
+
+  .projectCard {
+    height: 420px;
+    border-radius: 16px;
+  }
+
+  .sectionAction {
+    justify-content: stretch;
+  }
+
+  .sectionAction .btnSecondary,
+  .linkedinCta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .linkedinCta {
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Reset tablet 2-col grid → single column stack */
+  .testimonialGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .testimonialRow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .projectCard {
+    min-height: 420px;
+  }
+
+  .quoteCard,
+  .statCard {
+    min-height: 240px;
+    padding: var(--space-5);
+  }
+
+  /* 12px between review and reviewer; shared min-height keeps cards equal */
+  .quoteCard {
+    gap: 12px;
+  }
+
+  .statTitleLarge {
+    font-size: 48px;
+  }
+
+  .statTitle {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}

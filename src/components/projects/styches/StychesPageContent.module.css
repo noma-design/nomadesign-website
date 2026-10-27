@@ -1,0 +1,656 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ─── Hero ─────────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
+  font-family: var(--font-body);
+  font-size: var(--type-meta-size);
+  font-weight: 500;
+  line-height: var(--type-meta-leading);
+  color: var(--text-primary);
+}
+
+:global([data-theme="light"]) .tag {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tagInner {
+  padding: 6px var(--space-2);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-section-size);
+  font-weight: 700;
+  line-height: var(--type-section-leading);
+  color: var(--text-primary);
+}
+
+.summary {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+  color: var(--text-secondary);
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.protoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.protoLabel {
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 500;
+  line-height: var(--type-body-leading);
+  color: var(--button-secondary-text);
+}
+
+.protoButtons {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: stretch;
+  gap: var(--space-5);
+  width: max-content;
+  max-width: 100%;
+}
+
+.protoBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 56px;
+  gap: var(--space-2);
+  padding: 16px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--button-secondary-border);
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 600;
+  line-height: var(--type-body-leading);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .protoBtn:hover:not([data-suppress-hover]) {
+    background: var(--button-secondary-hover-bg);
+    border-color: var(--button-secondary-border-end);
+  }
+}
+
+.protoBtn[data-pressed] {
+  transform: scale(0.98);
+}
+
+.protoBtn img {
+  width: 20px;
+  height: 20px;
+}
+
+:global([data-theme="light"]) .protoBtn img {
+  filter: invert(1);
+}
+
+/* ─── Hero media + facts ───────────────────────────────── */
+
+.heroMediaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  width: 100%;
+}
+
+.mediaFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: none;
+  background: #838384;
+  aspect-ratio: 1128 / 850;
+}
+
+/* Figma 864:14425 — w 116.3% h 105.82% left -4.78% top -0.8% */
+.mediaHero {
+  position: absolute;
+  inset: auto;
+  display: block;
+  max-width: none;
+  width: 116.3%;
+  height: 105.82%;
+  left: -4.78%;
+  top: -0.8%;
+  object-fit: fill;
+}
+
+.facts {
+  display: flex;
+  gap: var(--space-2);
+  width: 100%;
+  overflow: hidden;
+}
+
+.fact {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-4);
+  background: var(--background-surface);
+  overflow: hidden;
+}
+
+.fact:first-child {
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.fact:last-child {
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.factIcon {
+  width: 24px;
+  height: 24px;
+}
+
+:global([data-theme="light"]) .factIcon {
+  filter: invert(1);
+}
+
+.factCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 500;
+  line-height: var(--type-body-leading);
+  text-align: center;
+}
+
+.factValue {
+  margin: 0;
+  max-width: 100%;
+  color: var(--text-primary);
+  overflow-wrap: break-word;
+}
+
+.factLabel {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ─── Body sections ────────────────────────────────────── */
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-default);
+  border: none;
+  margin: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: var(--space-8);
+  width: 100%;
+  align-items: start;
+}
+
+.sectionHeading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-section-size);
+  font-weight: 700;
+  line-height: var(--type-section-leading);
+  color: var(--text-primary);
+}
+
+.sectionBody {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 600;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-primary);
+}
+
+:global([data-theme="light"]) .num {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.itemCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.itemTitle {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 600;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-primary);
+}
+
+.itemBody {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.pipelineStep {
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.pipelineArrow {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+:global([data-theme="light"]) .pipelineArrow {
+  filter: invert(1);
+  opacity: 0.55;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullet {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+.bulletMark {
+  flex-shrink: 0;
+}
+
+/* ─── Figure blocks ─────────────────────────────────────── */
+
+.figureBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  /* Reset UA <figure> margins (default ~40px L/R) so frames share content-pad */
+  margin: 0;
+}
+
+.figureCaption {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 600;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.figureFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: none;
+  background: #838384;
+}
+
+.figureDesktop {
+  background: #d7cfcf;
+}
+
+.figureFrame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Service map — Figma 864:14479 aspect 1240/923
+   w 102.68% h 102.17% left -0.03% top -1.1% */
+.figureServiceMap {
+  aspect-ratio: 1240 / 923;
+}
+
+.figureServiceMap img {
+  position: absolute;
+  inset: auto;
+  max-width: none;
+  width: 102.68%;
+  height: 102.17%;
+  left: -0.03%;
+  top: -1.1%;
+  object-fit: fill;
+}
+
+/* Dual-state flow — Figma 864:14502 aspect 1247/620
+   w 108.26% h 102.81% left -0.02% top -2.71% */
+.figureDualFlow {
+  aspect-ratio: 1247 / 620;
+}
+
+.figureDualFlow img {
+  position: absolute;
+  inset: auto;
+  max-width: none;
+  width: 108.26%;
+  height: 102.81%;
+  left: -0.02%;
+  top: -2.71%;
+  object-fit: fill;
+}
+
+.figureStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* Continuation rows that omit the left heading in Figma */
+.splitContinue {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: var(--space-8);
+  width: 100%;
+  align-items: start;
+}
+
+.splitContinue .sectionHeading {
+  visibility: hidden;
+}
+
+/* ─── More projects ────────────────────────────────────── */
+
+.more {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+}
+
+.moreHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.moreTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-hero-size);
+  font-weight: 700;
+  line-height: var(--type-hero-leading);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.moreLine {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 1px;
+  background: var(--border-default);
+}
+
+.moreGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.moreFooter {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.seeMore {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 16px 29px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--button-secondary-border);
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 600;
+  line-height: var(--type-body-leading);
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .seeMore:hover:not([data-suppress-hover]) {
+    background: var(--button-secondary-hover-bg);
+    border-color: var(--button-secondary-border-end);
+  }
+}
+
+.seeMore[data-pressed] {
+  transform: scale(0.98);
+}
+
+.seeMoreIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ─── Responsive ───────────────────────────────────────── */
+
+@media (max-width: 1199px) {
+  .split,
+  .splitContinue {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .splitContinue .sectionHeading {
+    display: none;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .page {
+    gap: var(--space-8);
+  }
+
+  .mediaFrame,
+  .figureFrame {
+    border-radius: 16px;
+  }
+
+  .facts {
+    flex-direction: column;
+    gap: var(--space-2);
+    overflow: visible;
+  }
+
+  .fact,
+  .fact:first-child,
+  .fact:last-child {
+    border-radius: var(--radius-full);
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    /* Equal pad — icons hidden so copy sits true-center in the pill */
+    padding: 18px 24px;
+    overflow: visible;
+    text-align: center;
+  }
+
+  .factIcon {
+    display: none;
+  }
+
+  .factCopy {
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .factValue,
+  .factLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 1.25;
+  }
+
+  .moreGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .moreTitle {
+    white-space: normal;
+  }
+
+  .pipeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pipelineArrow {
+    transform: rotate(90deg);
+  }
+}

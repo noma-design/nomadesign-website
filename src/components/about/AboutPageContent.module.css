@@ -1,0 +1,1295 @@
+/* About — Figma 38:889 / 439:6290 */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  width: 100%;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-section-size);
+  font-weight: 700;
+  line-height: var(--type-section-leading);
+  color: var(--text-primary);
+}
+
+/* ─── Hero ─────────────────────────────────────────────── */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 497px;
+  grid-template-areas:
+    "intro portrait"
+    "below portrait";
+  align-items: center;
+  column-gap: var(--space-5);
+  row-gap: var(--space-5);
+  width: 100%;
+}
+
+.heroIntro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.portraitReveal {
+  grid-area: portrait;
+  justify-self: end;
+}
+
+.heroBelow {
+  grid-area: below;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+  align-self: start;
+}
+
+.heroTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-hero-size);
+  font-weight: 700;
+  line-height: var(--type-hero-leading);
+  color: var(--text-primary);
+}
+
+.heroName {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-section-size);
+  font-weight: 700;
+  line-height: var(--type-section-leading);
+  color: var(--text-primary);
+}
+
+.heroBody {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--social-btn-border);
+  background: var(--social-btn-bg);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .socialBtn:hover:not([data-suppress-hover]) {
+    opacity: 0.88;
+  }
+}
+
+.socialBtn[data-pressed] {
+  transform: scale(0.96);
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}
+
+:global([data-theme="light"]) .socialIcon {
+  filter: invert(1);
+}
+
+.portraitFrame,
+.mediaFrame {
+  position: relative;
+  flex-shrink: 0;
+  width: 497px;
+  max-width: 100%;
+  aspect-ratio: 497 / 614;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(18, 78, 82, 1) 0%,
+      rgba(20, 20, 20, 1) 100%
+    );
+}
+
+:global([data-theme="light"]) .portraitFrame,
+:global([data-theme="light"]) .mediaFrame,
+:global([data-theme="light"]) .videoCard {
+  border: none;
+  background: transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.portraitImage,
+.mediaImage {
+  object-fit: cover;
+}
+
+/* ─── Outside design ───────────────────────────────────── */
+
+.outsideGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  width: 100%;
+  padding: var(--space-5) 0;
+}
+
+.collage {
+  position: relative;
+  width: 755px;
+  max-width: 100%;
+  height: 680px;
+  flex-shrink: 1;
+}
+
+.collageGlow {
+  position: absolute;
+  left: 120px;
+  top: 120px;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  opacity: 0.12;
+  transform: scale(0.76);
+}
+
+.collageGlow img {
+  width: 100%;
+  height: 100%;
+}
+
+.collageCard {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #121214;
+  border: 1px solid #27272a;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.5);
+  opacity: 0.12;
+  will-change: transform, opacity;
+}
+
+/* Light collage — Figma 480:2468 polaroid frames */
+.collageLight .collageCard {
+  background: #ffffff;
+  box-shadow: 0 12px 10px rgba(26, 32, 44, 0.12);
+}
+
+.collageLight .cardGym {
+  border: 4px solid #355d44;
+  border-radius: 24px;
+  box-shadow: 0 12px 10px rgba(26, 32, 44, 0.12);
+}
+
+.collageLight .cardGym .collagePhoto {
+  border-radius: 16px;
+}
+
+.collageLight .cardCinema {
+  background: var(--background-canvas);
+  border: 3px solid #2a2a2a;
+  border-radius: 32px;
+  box-shadow: 6px 16px 12px rgba(26, 32, 44, 0.17);
+}
+
+.collageLight .cardCinema .collagePhoto {
+  border-radius: 12px;
+}
+
+.collageLight .cardKaraoke {
+  background: var(--background-canvas);
+  border: 3px solid #2b6cb0;
+  border-radius: 24px;
+  box-shadow: -4px 12px 10px rgba(26, 32, 44, 0.12);
+}
+
+.collageLight .cardKaraoke .collagePhoto {
+  border-radius: 16px;
+  border: 1px solid #355d44;
+}
+
+.collageLight .collageLabel {
+  color: #1a202c;
+}
+
+.collagePhoto {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.collagePhoto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+}
+
+/* Figma 1145:12663 / 480:2510 — gym-photo crop */
+.cardGym .collagePhoto img {
+  inset: auto;
+  width: 100%;
+  height: 106.67%;
+  left: -0.03%;
+  top: -5.98%;
+  object-fit: fill;
+}
+
+/* Figma 1145:12688 — cinema-photo full cover */
+.cardCinema .collagePhoto img {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Figma 1145:12713 / 1145:12813 — voice/karaoke crop */
+.cardKaraoke .collagePhoto img {
+  inset: auto;
+  width: 162.82%;
+  height: 135.71%;
+  left: -0.14%;
+  top: -35.48%;
+  object-fit: fill;
+}
+
+.collageLabel {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-meta-size);
+  font-weight: 500;
+  line-height: var(--type-meta-leading);
+  color: var(--text-primary);
+}
+
+.cardGym {
+  left: 30px;
+  top: -11px;
+  width: 330px;
+  transform: translate(-250px, -40px) rotate(3deg) scale(0.9);
+}
+
+.cardGym .collagePhoto {
+  height: 360px;
+}
+
+.cardCinema {
+  left: 345px;
+  top: 112px;
+  width: 360px;
+  border-color: #e53e3e;
+  border-width: 1.5px;
+  box-shadow: 4px 24px 20px rgba(0, 0, 0, 0.6);
+  transform: translate(235px, -25px) rotate(3deg) scale(0.9);
+}
+
+.cardCinema .collagePhoto {
+  height: 220px;
+}
+
+.cardKaraoke {
+  left: 120px;
+  top: 400px;
+  width: 350px;
+  padding: 12px;
+  gap: 10px;
+  transform: translate(-70px, 220px) rotate(-9deg) scale(0.9);
+}
+
+.cardKaraoke .collagePhoto {
+  height: 220px;
+  border: 1px solid #355d44;
+}
+
+/* Magnetic collage — one-shot entrance (Figma 480:2563), not floating */
+.collagePlayed .collageGlow {
+  animation: collageGlowIn 2.2s linear forwards;
+}
+
+.collagePlayed .cardGym {
+  animation: collageGymIn 2.2s linear forwards;
+}
+
+.collagePlayed .cardCinema {
+  animation: collageCinemaIn 2.2s linear forwards;
+}
+
+.collagePlayed .cardKaraoke {
+  animation: collageKaraokeIn 2.2s linear forwards;
+}
+
+@keyframes collageGlowIn {
+  0% {
+    opacity: 0.12;
+    transform: scale(0.76);
+  }
+  24.545% {
+    opacity: 0.12;
+    transform: scale(0.76);
+  }
+  29.091% {
+    opacity: 0.95;
+    transform: scale(1.12);
+  }
+  34.545% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  41.818% {
+    opacity: 0.88;
+    transform: scale(1.14);
+  }
+  47.273% {
+    opacity: 0.34;
+    transform: scale(0.92);
+  }
+  55.455% {
+    opacity: 0.92;
+    transform: scale(1.16);
+  }
+  62.727% {
+    opacity: 0.68;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.68;
+    transform: scale(1);
+  }
+}
+
+@keyframes collageGymIn {
+  0% {
+    opacity: 0.12;
+    transform: translate(-250px, -40px) rotate(3deg) scale(0.9);
+  }
+  5.455% {
+    opacity: 0.12;
+    transform: translate(-250px, -40px) rotate(3deg) scale(0.9);
+  }
+  21.818% {
+    opacity: 1;
+  }
+  24.545% {
+    opacity: 1;
+    transform: translate(-20px, -3.2px) rotate(-2.5deg) scale(0.96);
+  }
+  29.091% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-4deg) scale(1.055, 0.96);
+  }
+  36.364% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-4deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-4deg) scale(1);
+  }
+}
+
+@keyframes collageCinemaIn {
+  0% {
+    opacity: 0.12;
+    transform: translate(235px, -25px) rotate(3deg) scale(0.9);
+  }
+  18.182% {
+    opacity: 0.12;
+    transform: translate(235px, -25px) rotate(3deg) scale(0.9);
+  }
+  34.545% {
+    opacity: 1;
+  }
+  37.273% {
+    opacity: 1;
+    transform: translate(18.8px, -2px) rotate(3deg) scale(0.96);
+  }
+  41.818% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(3deg) scale(1.055, 0.96);
+  }
+  49.091% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(3deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(3deg) scale(1);
+  }
+}
+
+@keyframes collageKaraokeIn {
+  0% {
+    opacity: 0.12;
+    transform: translate(-70px, 220px) rotate(-9deg) scale(0.9);
+  }
+  30.909% {
+    opacity: 0.12;
+    transform: translate(-70px, 220px) rotate(-9deg) scale(0.9);
+  }
+  47.273% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-5.6px, 17.6px) rotate(-3.5deg) scale(0.96);
+  }
+  54.545% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-2deg) scale(1.055, 0.96);
+  }
+  61.818% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-2deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-2deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collageGlow,
+  .collageCard {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .cardGym {
+    transform: rotate(-4deg);
+  }
+
+  .cardCinema {
+    transform: rotate(3deg);
+  }
+
+  .cardKaraoke {
+    transform: rotate(-2deg);
+  }
+}
+
+.videoCard {
+  position: relative;
+  flex-shrink: 0;
+  width: 497px;
+  max-width: 100%;
+  aspect-ratio: 497 / 614;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 0;
+  background: #0a0a0a;
+}
+
+.videoElement {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  cursor: pointer;
+  background: #0a0a0a;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.videoPauseHit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.videoScrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+.playBtn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-full);
+  background: rgba(212, 212, 212, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+  pointer-events: none;
+}
+
+.videoOverlay:hover .playBtn {
+  transform: scale(1.04);
+  background: rgba(212, 212, 212, 0.55);
+}
+
+/* ─── Why hire me ──────────────────────────────────────── */
+
+.hireGrid,
+.toolsGrid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.hireAccordion {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 700px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.accordionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.accordionItemOpen {
+  gap: 20px;
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 600;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.accordionHeaderOpen {
+  color: var(--accent-lime-card);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: #a0a0a0;
+}
+
+.accordionHeaderOpen .chevron {
+  color: currentColor;
+}
+
+.accordionBody {
+  padding: 0 0 8px 16px;
+}
+
+.accordionBody > p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+  color: var(--text-primary);
+}
+
+/* Light: active heading = primary, body = secondary — no green */
+:global([data-theme="light"]) .accordionHeaderOpen {
+  color: var(--text-primary);
+}
+
+:global([data-theme="light"]) .chevron {
+  color: #6b6b6b;
+}
+
+:global([data-theme="light"]) .accordionHeaderOpen .chevron {
+  color: var(--text-primary);
+}
+
+:global([data-theme="light"]) .accordionBody > p {
+  color: var(--text-secondary);
+}
+
+.accordionLine {
+  height: 1px;
+  width: 100%;
+  background: var(--border-default);
+}
+
+/* ─── Skills ───────────────────────────────────────────── */
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 2px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+:global([data-theme="light"]) .skillsGrid {
+  border-color: rgba(10, 10, 10, 0.08);
+}
+
+.skillsRow {
+  display: flex;
+  gap: 2px;
+  width: 100%;
+}
+
+.skillCell {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 28px 32px;
+  background: var(--background-surface);
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 500;
+  line-height: var(--type-body-leading);
+  color: var(--text-primary);
+}
+
+.skillTL {
+  border-top-left-radius: 14px;
+}
+
+.skillTR {
+  border-top-right-radius: 14px;
+}
+
+.skillBL {
+  border-bottom-left-radius: 14px;
+}
+
+.skillBR {
+  border-bottom-right-radius: 14px;
+}
+
+/* ─── Tools ────────────────────────────────────────────── */
+
+.toolsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.toolsIntro {
+  margin: 0;
+  max-width: 947px;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+.toolsList {
+  display: flex;
+  flex-direction: column;
+  width: 675px;
+  max-width: 100%;
+  flex-shrink: 1;
+}
+
+.toolItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.toolItem:last-child {
+  border-bottom: none;
+}
+
+.toolIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border-default);
+  background: var(--background-surface);
+}
+
+.toolIcon img {
+  max-width: 32px;
+  max-height: 32px;
+  object-fit: contain;
+}
+
+.toolText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.toolName {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 600;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-primary);
+}
+
+.toolDesc {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+  color: var(--text-secondary);
+}
+
+/* ─── Process ──────────────────────────────────────────── */
+
+.processGrid {
+  display: grid;
+  grid-template-columns: 1fr 362px 1fr;
+  grid-template-rows: 340px 380px 340px;
+  grid-template-areas:
+    "s01 sticky s02"
+    "sketch s03 s03"
+    "s04 s05 desk";
+  gap: 24px;
+  width: 100%;
+}
+
+.processS01 {
+  grid-area: s01;
+}
+
+.processSticky {
+  grid-area: sticky;
+}
+
+.processS02 {
+  grid-area: s02;
+}
+
+.processSketch {
+  grid-area: sketch;
+}
+
+.processS03 {
+  grid-area: s03;
+}
+
+.processS04 {
+  grid-area: s04;
+}
+
+.processS05 {
+  grid-area: s05;
+}
+
+.processDesk {
+  grid-area: desk;
+}
+
+.processCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  height: 100%;
+  padding: 36px;
+  border-radius: 24px;
+}
+
+.processWide {
+  gap: 40px;
+  padding: 48px;
+  border-radius: 32px;
+  border: none;
+}
+
+.processRoundedLg {
+  border-radius: 32px;
+}
+
+.processSurface {
+  background: var(--background-surface);
+  color: var(--text-primary);
+}
+
+.processLime {
+  background: var(--accent-lime-card);
+  color: #0a0a0a;
+}
+
+.processNum {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-section-size);
+  font-weight: 700;
+  line-height: var(--type-section-leading);
+}
+
+.processCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.processCopy h3 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 600;
+  line-height: var(--type-bigger-leading);
+}
+
+.processCopy p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+}
+
+.processSurface .processCopy p {
+  color: var(--text-secondary);
+}
+
+.processLime .processCopy p {
+  color: #0a0a0a;
+}
+
+.processPhoto,
+.processPhotoWide,
+.processPhotoFlex {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.processPhotoWide {
+  max-width: 358px;
+  justify-self: start;
+  width: 100%;
+}
+
+.processPhoto img,
+.processPhotoWide img,
+.processPhotoFlex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:global([data-theme="light"]) .processPhoto,
+:global([data-theme="light"]) .processPhotoWide,
+:global([data-theme="light"]) .processPhotoFlex {
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Tablet ≤1199 — Figma 1153:11350 (light + dark) ───── */
+
+@media (max-width: 1199px) {
+  .page {
+    gap: 64px;
+  }
+
+  /* Hero + Why hire: copy | 310 portrait (not stacked) */
+  .hero {
+    grid-template-columns: 1fr 310px;
+    column-gap: 24px;
+    row-gap: 24px;
+    align-items: center;
+  }
+
+  .hireGrid {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hireGrid > :last-child {
+    flex-shrink: 0;
+  }
+
+  .hireAccordion {
+    flex: 1 1 0;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .portraitFrame,
+  .hireGrid .mediaFrame {
+    width: 310px;
+    max-width: 310px;
+    aspect-ratio: 310 / 383;
+    margin: 0;
+  }
+
+  /* Outside: centered video, then 2-col collage */
+  .outsideGrid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    padding: 0;
+  }
+
+  /* Video ScrollReveal is the second child — pull above collage */
+  .outsideGrid > :last-child {
+    order: -1;
+  }
+
+  .videoCard {
+    width: 310px;
+    max-width: 100%;
+    aspect-ratio: 310 / 383;
+    margin: 0 auto;
+  }
+
+  .collage {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    align-items: start;
+  }
+
+  .collageGlow {
+    display: none;
+  }
+
+  .collageCard,
+  .collagePlayed .collageCard,
+  .collagePlayed .cardGym,
+  .collagePlayed .cardCinema,
+  .collagePlayed .cardKaraoke {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    opacity: 1;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .cardGym {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin-top: 64px;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .cardGym .collagePhoto {
+    height: auto;
+    aspect-ratio: 364 / 424;
+  }
+
+  .cardCinema {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    padding: 12px;
+  }
+
+  .cardKaraoke {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    padding: 12px;
+  }
+
+  .cardCinema .collagePhoto,
+  .cardKaraoke .collagePhoto {
+    height: auto;
+    aspect-ratio: 338 / 238;
+  }
+
+  /* Tools: photo centered above full-width list */
+  .toolsGrid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  /* Workspace photo ScrollReveal is the second child — pull above list */
+  .toolsGrid > :last-child {
+    order: -1;
+  }
+
+  .toolsGrid .mediaFrame {
+    width: 310px;
+    max-width: 100%;
+    aspect-ratio: 310 / 363;
+    margin: 0 auto;
+  }
+
+  .toolsList {
+    width: 100%;
+  }
+
+  /* Process: 2-col — 01|img, 02|img, 03|04, 05|img */
+  .processGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "s01 sticky"
+      "s02 sketch"
+      "s03 s04"
+      "s05 desk";
+    gap: 24px;
+  }
+
+  .processCard {
+    height: auto;
+    min-height: 292px;
+    padding: 28px;
+  }
+
+  .processWide {
+    gap: 24px;
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .processPhoto,
+  .processPhotoWide,
+  .processPhotoFlex {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 292px;
+    aspect-ratio: 345 / 352;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    gap: var(--space-8);
+  }
+
+  /* Title → name → portrait → body → socials */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-5);
+  }
+
+  .heroIntro,
+  .portraitReveal,
+  .heroBelow {
+    grid-area: auto;
+    justify-self: stretch;
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .hireGrid,
+  .toolsGrid,
+  .outsideGrid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-5);
+  }
+
+  .portraitFrame,
+  .hireGrid .mediaFrame,
+  .toolsGrid .mediaFrame,
+  .videoCard {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 497 / 614;
+    margin: 0;
+    border-radius: 16px;
+  }
+
+  /* Video / section images sit right under the heading */
+  .outsideGrid > :last-child,
+  .hireGrid > :last-child,
+  .toolsGrid > :last-child {
+    order: -1;
+  }
+
+  .collage {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: var(--space-4);
+    height: auto;
+  }
+
+  .cardGym,
+  .cardCinema,
+  .cardKaraoke {
+    grid-column: auto;
+    grid-row: auto;
+    margin-top: 0;
+  }
+
+  .cardGym .collagePhoto {
+    height: auto;
+    aspect-ratio: 364 / 424;
+  }
+
+  .cardCinema .collagePhoto,
+  .cardKaraoke .collagePhoto {
+    height: auto;
+    aspect-ratio: 338 / 238;
+  }
+
+  /* Stop fitness photo from stretching wide on mobile */
+  .cardGym .collagePhoto img {
+    inset: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cardKaraoke .collagePhoto img {
+    inset: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .skillsRow {
+    flex-direction: column;
+  }
+
+  .skillTL,
+  .skillTR,
+  .skillBL,
+  .skillBR {
+    border-radius: 0;
+  }
+
+  .skillCell:first-child {
+    border-radius: 14px 14px 0 0;
+  }
+
+  .skillsRow:last-child .skillCell:last-child {
+    border-radius: 0 0 14px 14px;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "s01"
+      "sticky"
+      "s02"
+      "sketch"
+      "s03"
+      "s04"
+      "s05"
+      "desk";
+    gap: var(--space-5);
+  }
+
+  .processCard {
+    min-height: 0;
+    padding: var(--space-6);
+  }
+
+  .processPhoto,
+  .processPhotoWide,
+  .processPhotoFlex {
+    width: 100%;
+    height: 240px;
+    min-height: 0;
+    aspect-ratio: auto;
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,150 @@
+/*
+  Project media — mirror Figma absolute image placement exactly.
+
+  Source: PIqwMWFvPEbrtTTUBpCu3G → PROJECT LANDING PAGE (455:6846)
+  and HOME PAGE featured cards (38:781).
+
+  Rules (henceforth):
+  1. Use Figma’s width/height/left/top % (or inset + object-fit: cover).
+     Do NOT invent --media-scale zooms.
+  2. Frame: overflow hidden, radius-lg, no dark stroke. Grey #838384
+     behind letterboxing / overscan edges.
+  3. Per-asset classes below are copied from get_design_context output.
+*/
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: #838384;
+}
+
+@media (max-width: 767px) {
+  .frame {
+    border-radius: 16px;
+  }
+}
+
+:global([data-theme="light"]) .frame {
+  background: #e5e5e5;
+}
+
+/* Base: full-bleed cover (Noma, Mayflower, default) */
+.image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center center;
+  transform-origin: center center;
+  transition: transform 0.28s ease-out;
+}
+
+/* Zoom on frame hover, or when a wrapping link/card is hovered
+   (home featured overlays sit above the frame and would otherwise block :hover). */
+.frame:hover .image,
+:global(a:hover) .frame .image {
+  transform: scale(1.03);
+}
+
+/* ── Projects landing (480:1185…480:1166) ───────────────── */
+
+/* Styches — 480:1187 featured-shopease-card
+   h-[102.23%] left-[-3.69%] top-[-1.31%] w-[113.41%] */
+.cropStyches {
+  inset: auto;
+  width: 113.41%;
+  height: 102.23%;
+  left: -3.69%;
+  top: -1.31%;
+  object-fit: fill;
+}
+
+/* Yelvio — 728:878 Project image
+   h-full left-[-8.24%] top-[0.02%] w-[109.92%] */
+.cropYelvio {
+  inset: auto;
+  width: 109.92%;
+  height: 100%;
+  left: -8.24%;
+  top: 0.02%;
+  object-fit: fill;
+}
+
+/* Roam — 480:1079 Visual Frame (fill, centered)
+   h-[115.03%] left-[-11.6%] top-[-7.47%] w-[128.15%] */
+.cropRoam {
+  inset: auto;
+  width: 128.15%;
+  height: 115.03%;
+  left: -11.6%;
+  top: -7.47%;
+  object-fit: fill;
+  object-position: center center;
+}
+
+/* Noma — 1018:8527 inset-0 object-cover */
+.cropNoma {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Jumia — 480:1066
+   h-full left-[-7.32%] top-0 w-[114.65%] */
+.cropJumia {
+  inset: auto;
+  width: 114.65%;
+  height: 100%;
+  left: -7.32%;
+  top: 0;
+  object-fit: fill;
+}
+
+/* Mayflower — 480:1168 inset-0 object-cover */
+.cropMayflower {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cropDefault {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Home featured (38:781 → 1018:8539 / 1028:8611) ───────
+   Use top/left + explicit size (not inset:auto alone) so height:100%
+   resolves against the absolute frame on first paint. */
+
+/* Styches home — h-full left-[-1.02%] top-[-0.08%] w-[107.58%] */
+.cropStychesHome {
+  inset: unset;
+  top: -0.08%;
+  left: -1.02%;
+  right: auto;
+  bottom: auto;
+  width: 107.58%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Yelvio home — h-full left-[-6.12%] top-[-0.08%] w-[107.58%] */
+.cropYelvioHome {
+  inset: unset;
+  top: -0.08%;
+  left: -6.12%;
+  right: auto;
+  bottom: auto;
+  width: 107.58%;
+  height: 100%;
+  object-fit: cover;
+}

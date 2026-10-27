@@ -1,0 +1,193 @@
+:root {
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px; /* Figma Typography/Layout space-9 */
+  --space-10: 128px;
+
+  /* Radius */
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* Layout */
+  --page-max: 1440px;
+  --content-pad: 80px;
+  --nav-width: 1000px;
+  --nav-height: 100px;
+
+  /* Typography — next/font sets --font-inter / --font-space-grotesk on <html> */
+  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-body: var(--font-inter), Inter, sans-serif;
+
+  /* Type scale — Desktop defaults (Figma Text styles)
+     Tablet ≤1199 and Mobile ≤767 override below. */
+  --type-hero-size: 56px;
+  --type-hero-leading: 64px;
+  --type-section-size: 36px;
+  --type-section-leading: 44px;
+  --type-title-size: 32px;
+  --type-title-leading: 40px;
+  --type-card-size: 20px;
+  --type-card-leading: 32px;
+  --type-bigger-size: 20px;
+  --type-bigger-leading: 32px;
+  --type-button-size: 16px;
+  --type-button-leading: 24px;
+  --type-nav-size: 16px;
+  --type-nav-leading: 24px;
+  --type-body-size: 16px;
+  --type-body-leading: 24px;
+  --type-meta-size: 14px;
+  --type-meta-leading: 20px;
+
+  /* Accent (shared) */
+  --accent-lime: #24c629;
+  --accent-lime-card: #c5fa58;
+  --accent-location: #c1a28c;
+
+  /* Dark mode (default) */
+  --background-canvas: #0a0a0a;
+  --background-footer: #1a1a1a;
+  --background-surface: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a6a5a5;
+  --text-muted: #6b6b6b;
+  --text-nav-inactive: #d4d4d4;
+  --text-nav-active: #f5f5f5;
+  --border-default: #2a2a2a;
+  --border-subtle: rgba(255, 255, 255, 0.11);
+
+  --button-primary-fill-start: #efefef;
+  --button-primary-fill-end: #b8b8c2;
+  --button-primary-text: #0a0a0a;
+  /* Secondary — Figma button/secondary (dark) */
+  --button-secondary-border: #efefef;
+  --button-secondary-border-end: #b8b8c2;
+  --button-secondary-text: #f5f5f5;
+  --button-secondary-bg: transparent;
+  --button-secondary-hover-bg: rgba(245, 245, 245, 0.1);
+
+  /* Nav — exact Figma dark glass */
+  --nav-bg: rgba(10, 10, 10, 0.15);
+  --nav-border: rgba(255, 255, 255, 0.11);
+  --nav-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+  --nav-blur: 8px;
+
+  --toggle-track: rgba(212, 212, 212, 0.4);
+  --toggle-track-hover: rgba(212, 212, 212, 0.55);
+  --toggle-track-pressed: rgba(212, 212, 212, 0.7);
+  --toggle-track-border: transparent;
+  --toggle-track-border-hover: rgba(255, 255, 255, 0.16);
+  --toggle-ring: rgba(245, 245, 245, 0.12);
+  --toggle-active-bg: #f5f5f5;
+  --toggle-inactive-bg: transparent;
+
+  --social-btn-bg: #f5f5f5;
+  --social-btn-border: #f5f5f5;
+}
+
+[data-theme="light"] {
+  --background-canvas: #fefefe;
+  --background-footer: #f5f5f5;
+  --background-surface: #f5f5f5;
+  --text-primary: #0a0a0a;
+  --text-secondary: #6b6b6b;
+  --text-muted: #6b6b6b;
+  --text-nav-inactive: #3a3636;
+  --text-nav-active: #0a0a0a;
+  --border-default: #e5e5e5;
+  --border-subtle: rgba(10, 10, 10, 0.06);
+  --accent-lime-card: #a1e865;
+  --accent-location: #7b4015;
+
+  --button-primary-fill-start: #0a0a0a;
+  --button-primary-fill-end: #35313e;
+  --button-primary-text: #f5f5f5;
+  /* Secondary — outline (no fill), solid #0A0A0A border */
+  --button-secondary-border: #0a0a0a;
+  --button-secondary-border-end: #35313e;
+  --button-secondary-text: #0a0a0a;
+  --button-secondary-bg: transparent;
+  --button-secondary-hover-bg: rgba(10, 10, 10, 0.06);
+
+  /* Nav — exact Figma light glass */
+  --nav-bg: rgba(255, 255, 255, 0.2);
+  --nav-border: rgba(10, 10, 10, 0.08);
+  --nav-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+  --nav-blur: 5px;
+
+  --toggle-track: rgba(212, 212, 212, 0.4);
+  --toggle-track-hover: rgba(212, 212, 212, 0.58);
+  --toggle-track-pressed: rgba(212, 212, 212, 0.72);
+  --toggle-track-border: rgba(229, 229, 229, 0.5);
+  --toggle-track-border-hover: rgba(10, 10, 10, 0.14);
+  --toggle-ring: rgba(10, 10, 10, 0.08);
+  --toggle-active-bg: #fefefe;
+  --toggle-inactive-bg: transparent;
+
+  --social-btn-bg: #0a0a0a;
+  --social-btn-border: #0a0a0a;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    /* Figma tablet frames use 40px horizontal inset */
+    --content-pad: 40px;
+    --nav-width: min(1000px, calc(100% - 80px));
+
+    /* Typography/Tablet */
+    --type-hero-size: 40px;
+    --type-hero-leading: 48px;
+    --type-section-size: 28px;
+    --type-section-leading: 34px;
+    --type-title-size: 24px;
+    --type-title-leading: normal;
+    --type-card-size: 18px;
+    --type-card-leading: 22px;
+    --type-bigger-size: 18px;
+    --type-bigger-leading: 22px;
+    --type-button-size: 16px;
+    --type-button-leading: 24px;
+    --type-nav-size: 16px;
+    --type-nav-leading: 24px;
+    --type-body-size: 16px;
+    --type-body-leading: 24px;
+    --type-meta-size: 13px;
+    --type-meta-leading: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --content-pad: 20px;
+    --nav-width: calc(100% - 40px);
+    --nav-height: 72px;
+
+    /* Typography/Mobile */
+    --type-hero-size: 28px;
+    --type-hero-leading: 34px;
+    --type-section-size: 20px;
+    --type-section-leading: 24px;
+    --type-title-size: 24px;
+    --type-title-leading: 30px;
+    --type-card-size: 18px;
+    --type-card-leading: 22px;
+    --type-bigger-size: 18px;
+    --type-bigger-leading: 22px;
+    --type-button-size: 15px;
+    --type-button-leading: 23px;
+    --type-nav-size: 15px;
+    --type-nav-leading: 23px;
+    --type-body-size: 15px;
+    --type-body-leading: 23px;
+    --type-meta-size: 12px;
+    --type-meta-leading: 18px;
+  }
+}

@@ -1,0 +1,184 @@
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 532px;
+  padding: 40px 64px;
+  opacity: 1;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.overlayFading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.graphic {
+  position: relative;
+  width: 208px;
+  height: 208px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ring,
+.verify {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ringOuter {
+  width: 208px;
+  height: 208px;
+  animation: ringOuter 2s infinite;
+}
+
+.ringMid {
+  width: 168.381px;
+  height: 168.381px;
+  animation: ringMid 2s infinite;
+}
+
+.ringInner {
+  width: 128.762px;
+  height: 128.762px;
+  animation: ringInner 2s infinite;
+}
+
+.verify {
+  width: 118.857px;
+  height: 118.857px;
+  animation: verifyPop 2s infinite;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  max-width: 398px;
+  margin-top: 32px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-hero-size);
+  font-weight: 700;
+  line-height: var(--type-hero-leading);
+}
+
+.subtitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--type-title-size);
+  font-weight: 700;
+  line-height: var(--type-title-leading);
+}
+
+.note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+}
+
+@keyframes ringOuter {
+  0% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+  17.5%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes ringMid {
+  0%,
+  6% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  15%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes ringInner {
+  0%,
+  11% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  17.5%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes verifyPop {
+  0%,
+  17.5% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg) scale(0.1);
+  }
+  27.5%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
+@media (max-width: 767px) {
+  .overlay {
+    min-height: 420px;
+    padding: 32px 24px;
+  }
+
+  .graphic {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ringOuter {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ringMid {
+    width: 130px;
+    height: 130px;
+  }
+
+  .ringInner {
+    width: 100px;
+    height: 100px;
+  }
+
+  .verify {
+    width: 92px;
+    height: 92px;
+  }
+
+  .copy {
+    margin-top: 24px;
+  }
+}
