@@ -118,9 +118,9 @@
   --button-secondary-hover-bg: rgba(10, 10, 10, 0.06);
 
   /* Nav — exact Figma light glass */
-  --nav-bg: rgba(255, 255, 255, 0.2);
-  --nav-border: rgba(10, 10, 10, 0.08);
-  --nav-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.55);
+  --nav-border: rgba(10, 10, 10, 0.14);
+  --nav-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
   --nav-blur: 5px;
 
   --toggle-track: rgba(212, 212, 212, 0.4);
