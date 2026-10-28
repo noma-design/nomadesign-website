@@ -127,9 +127,10 @@ figure {
 .page-main {
   flex: 1;
   width: 100%;
-  max-width: var(--page-max);
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding: calc(var(--nav-height) + 48px) var(--content-pad) var(--space-9);
+  box-sizing: border-box;
 }
 
 /* Shared: 52px clear space below the fixed nav pill (matches Home/Contact) */
