@@ -16,9 +16,9 @@
   --radius-lg: 24px;
   --radius-full: 999px;
 
-  /* Layout — no page max-width; content grows with viewport via --content-pad */
-  --page-max: none;
-  --content-pad: 100px;
+  /* Layout */
+  --page-max: 1440px;
+  --content-pad: 80px;
   --nav-width: 1000px;
   --nav-height: 100px;
 
