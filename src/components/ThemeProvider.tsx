@@ -19,26 +19,49 @@ type ThemeContextValue = {
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
+const STORAGE_KEY = "noma-theme";
 
 function applyTheme(theme: Theme) {
   document.documentElement.setAttribute("data-theme", theme);
+}
+
+function getSystemTheme(): Theme {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function resolveTheme(): Theme {
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  if (stored === "light" || stored === "dark") return stored;
+  return getSystemTheme();
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("noma-theme");
-    const initial: Theme =
-      stored === "light" || stored === "dark" ? stored : "dark";
+    const initial = resolveTheme();
     setThemeState(initial);
     applyTheme(initial);
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onSystemChange = () => {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored === "light" || stored === "dark") return;
+      const next = getSystemTheme();
+      setThemeState(next);
+      applyTheme(next);
+    };
+
+    media.addEventListener("change", onSystemChange);
+    return () => media.removeEventListener("change", onSystemChange);
   }, []);
 
   const setTheme = useCallback((next: Theme) => {
     setThemeState(next);
     applyTheme(next);
-    window.localStorage.setItem("noma-theme", next);
+    window.localStorage.setItem(STORAGE_KEY, next);
   }, []);
 
   const toggleTheme = useCallback(() => {

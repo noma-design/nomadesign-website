@@ -58,10 +58,17 @@ const themeInitScript = `
 (function() {
   try {
     var stored = localStorage.getItem('noma-theme');
-    var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+    var theme = stored === 'light' || stored === 'dark'
+      ? stored
+      : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', theme);
   } catch (e) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+    try {
+      var fallback = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', fallback);
+    } catch (e2) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
   }
 })();
 `;
