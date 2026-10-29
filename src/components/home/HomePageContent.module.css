@@ -1067,16 +1067,17 @@
     flex: 0 0 auto;
   }
 
-  /* Mobile cards — Figma 1155:9930 (436×, media 225 tall) */
+  /* Mobile cards — Figma 1155:9930 (436×; pt 16, gap 16, media 225, details, pb 24) */
   .projectCard {
     height: 436px;
+    min-height: 436px; /* override tablet min-height: 640 */
     flex-shrink: 0;
-    gap: var(--space-5);
-    padding: var(--space-4) 0 var(--space-6);
+    gap: var(--space-4);
+    padding: var(--space-4) 0 var(--space-5);
     border-radius: var(--radius-lg);
   }
 
-  /* Mobile media — Figma 1187:2421 / 1187:2451 (full width × 225), pad space-3 */
+  /* Mobile media — Figma 1187:2421 / 1187:2451 (326×225), pad space-3 */
   .projectMedia {
     width: calc(100% - 24px);
     height: 225px;
@@ -1097,6 +1098,7 @@
   .projectDetails {
     padding: 0 var(--space-4);
     gap: var(--space-3);
+    min-height: 0;
   }
 
   /* Typography/Mobile/Title 24 / 30 · Body 15 / 23 */
