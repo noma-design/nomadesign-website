@@ -11,7 +11,7 @@ export const mayflower: CaseStudyData = {
   summary:
     "Designing a hybrid e-commerce and appointment booking platform for a specialized Tallinn hair studio\u2014engineered from custom design tokens to a production Shopify build.",
   cta: { kind: "status", label: "In Progress", color: "#c6923f" },
-  heroImage: "/projects/mayflower/hero.png",
+  heroImage: "/projects/mayflower/hero.jpg",
   heroAlt:
     "Mayflower hair studio website mockup showing product catalog and booking interface",
   facts: [
@@ -97,7 +97,7 @@ export const mayflower: CaseStudyData = {
     {
       type: "figure",
       caption: "Foundation Design Token",
-      src: "/projects/mayflower/design-tokens.png",
+      src: "/projects/mayflower/design-tokens.jpg",
       alt: "Mayflower foundation design tokens showing typography, color palette, and spacing system",
     },
     {
@@ -115,7 +115,7 @@ export const mayflower: CaseStudyData = {
     {
       type: "figure",
       caption: "Button Components: Hierarchy & States",
-      src: "/projects/mayflower/button-components.png",
+      src: "/projects/mayflower/button-components.jpg",
       alt: "Mayflower button component matrix showing hierarchy and interaction states",
     },
     { type: "divider" },

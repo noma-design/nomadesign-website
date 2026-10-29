@@ -12,9 +12,9 @@ const collageClass = {
 } as const;
 
 const lightImages: Record<string, string> = {
-  fitness: "/about/photos/light/gym.png",
-  movies: "/about/photos/light/cinema.png",
-  karaoke: "/about/photos/light/karaoke.png",
+  fitness: "/about/photos/light/gym.jpg",
+  movies: "/about/photos/light/cinema.jpg",
+  karaoke: "/about/photos/light/karaoke.jpg",
 };
 
 export function OutsideCollage() {

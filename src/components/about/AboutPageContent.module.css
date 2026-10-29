@@ -958,7 +958,8 @@
 
 .processPhoto img,
 .processPhotoWide img,
-.processPhotoFlex img {
+.processPhotoFlex img,
+.processImage {
   width: 100%;
   height: 100%;
   object-fit: cover;

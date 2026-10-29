@@ -29,7 +29,9 @@
 }
 
 .projectGrid > .projectCard {
-  flex: 1 1 0;
+  /* flex-shrink must stay 0 — overflow:hidden zeroes min-size and
+     flex: 1 1 0 would collapse the card to padding-only (~40px). */
+  flex: 1 0 0;
   min-width: 0;
   width: 100%;
 }
@@ -430,12 +432,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
+  flex: 1 0 0;
   gap: var(--space-5);
   min-width: 0;
-  height: auto;
-  min-height: min-content;
-  padding: var(--space-4) 0 var(--space-5);
+  height: 716px;
+  padding: var(--space-4) 0 32px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-default);
   overflow: hidden;
@@ -918,12 +919,15 @@
     gap: 24px;
   }
 
+  .projectGrid > .projectCard {
+    flex: 0 0 auto;
+  }
+
   .projectCard {
     width: 100%;
-    height: auto;
-    min-height: min-content;
+    height: 640px;
     flex-shrink: 0;
-    padding: var(--space-4) 0 var(--space-5);
+    padding: var(--space-4) 0 28px;
     border-radius: var(--radius-lg);
   }
 
@@ -1048,12 +1052,15 @@
     gap: 24px;
   }
 
+  .projectGrid > .projectCard {
+    flex: 0 0 auto;
+  }
+
   .projectCard {
-    height: auto;
-    min-height: min-content;
+    height: 436px;
     flex-shrink: 0;
     gap: var(--space-5);
-    padding: var(--space-4) 0 var(--space-5);
+    padding: var(--space-4) 0 24px;
     border-radius: var(--radius-lg);
   }
 
