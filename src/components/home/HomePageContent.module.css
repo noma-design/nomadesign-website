@@ -435,7 +435,9 @@
   flex: 1 0 0;
   gap: var(--space-5);
   min-width: 0;
-  height: 716px;
+  /* Desktop: equal height via grid/flex stretch (taller card wins) */
+  height: auto;
+  min-height: 716px;
   padding: var(--space-4) 0 32px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-default);
@@ -455,6 +457,7 @@
   box-sizing: border-box;
   width: calc(100% - 32px);
   aspect-ratio: 596 / 480;
+  max-height: 480px;
   height: auto;
   margin: 0 var(--space-4);
   border-radius: var(--radius-md);
@@ -509,6 +512,7 @@
   width: 100%;
   padding: 0 var(--space-5);
   min-width: 0;
+  flex-shrink: 0;
 }
 
 .projectTitleRow {
@@ -925,7 +929,9 @@
 
   .projectCard {
     width: 100%;
-    height: 640px;
+    /* Equal height; media capped at 480 so title+meta always fit */
+    height: 720px;
+    min-height: 720px;
     flex-shrink: 0;
     padding: var(--space-4) 0 28px;
     border-radius: var(--radius-lg);
@@ -935,6 +941,7 @@
   .projectMedia {
     width: calc(100% - 32px);
     aspect-ratio: 722 / 480;
+    max-height: 480px;
     height: auto;
     margin: 0 var(--space-4);
     border-radius: var(--radius-md);
@@ -1057,7 +1064,9 @@
   }
 
   .projectCard {
-    height: 436px;
+    /* Equal height; media capped at 225 so title+meta always fit */
+    height: 480px;
+    min-height: 480px;
     flex-shrink: 0;
     gap: var(--space-5);
     padding: var(--space-4) 0 24px;
@@ -1068,6 +1077,7 @@
   .projectMedia {
     width: calc(100% - 24px);
     aspect-ratio: 326 / 225;
+    max-height: 225px;
     height: auto;
     margin: 0 var(--space-3);
     border-radius: var(--radius-sm);
