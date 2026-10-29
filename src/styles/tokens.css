@@ -28,7 +28,8 @@
   --font-body: var(--font-inter), Inter, sans-serif;
 
   /* Type scale — Desktop defaults (Figma Text styles)
-     Tablet ≤1199 and Mobile ≤820 override below. */
+     Tablet ≤1199 and Mobile ≤767 (type/pad) override below.
+     Layout components may still treat ≤820 as mobile (e.g. iPad Mini). */
   --type-hero-size: 56px;
   --type-hero-leading: 64px;
   --type-section-size: 36px;
@@ -165,7 +166,8 @@
   }
 }
 
-@media (max-width: 820px) {
+/* Phone only — iPad Mini (~768) keeps tablet type + content pad */
+@media (max-width: 767px) {
   :root {
     --content-pad: 20px;
     --nav-width: calc(100% - 40px);
