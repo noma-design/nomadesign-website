@@ -64,7 +64,7 @@ export function ProjectMediaImage({
       alt=""
       width={2400}
       height={1800}
-      sizes="(max-width: 767px) 100vw, (max-width: 1199px) 100vw, 628px"
+      sizes="(max-width: 820px) 100vw, (max-width: 1199px) 100vw, 628px"
       priority={priority}
       className={[styles.image, cropClass[crop], className]
         .filter(Boolean)

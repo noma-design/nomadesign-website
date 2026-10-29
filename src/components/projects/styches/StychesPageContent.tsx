@@ -77,7 +77,7 @@ export function StychesPageContent() {
               alt="Styches mobile and web app mockups"
               width={2400}
               height={1800}
-              sizes="(max-width: 767px) 100vw, 1240px"
+              sizes="(max-width: 820px) 100vw, 1240px"
               className={styles.mediaHero}
               priority
             />
@@ -219,7 +219,7 @@ export function StychesPageContent() {
                 alt="Service blueprint mapping before and after Styches"
                 width={2400}
                 height={1600}
-                sizes="(max-width: 767px) 100vw, 1200px"
+                sizes="(max-width: 820px) 100vw, 1200px"
                 className={styles.figureImage}
               />
             </div>
@@ -251,7 +251,7 @@ export function StychesPageContent() {
                 alt="Dual-state app flow diagram"
                 width={2400}
                 height={1600}
-                sizes="(max-width: 767px) 100vw, 1200px"
+                sizes="(max-width: 820px) 100vw, 1200px"
                 className={styles.figureImage}
               />
             </div>
@@ -291,7 +291,7 @@ export function StychesPageContent() {
                   alt={`High-fidelity wireframes set ${i + 1}`}
                   width={2400}
                   height={1600}
-                  sizes="(max-width: 767px) 100vw, 1200px"
+                  sizes="(max-width: 820px) 100vw, 1200px"
                   className={styles.figureImage}
                 />
               </div>
@@ -362,7 +362,7 @@ export function StychesPageContent() {
                   alt={`Styches mobile UI showcase ${i + 1}`}
                   width={2400}
                   height={1600}
-                  sizes="(max-width: 767px) 100vw, 1200px"
+                  sizes="(max-width: 820px) 100vw, 1200px"
                   className={styles.figureImage}
                 />
               </div>
@@ -405,7 +405,7 @@ export function StychesPageContent() {
                   alt={`Styches desktop UI showcase ${i + 1}`}
                   width={2400}
                   height={1600}
-                  sizes="(max-width: 767px) 100vw, 1200px"
+                  sizes="(max-width: 820px) 100vw, 1200px"
                   className={styles.figureImage}
                 />
               </div>

@@ -37,7 +37,7 @@ export function AboutPageContent() {
               src={aboutHero.portrait}
               alt="Kristin Adeoti"
               fill
-              sizes="(max-width: 767px) 100vw, 497px"
+              sizes="(max-width: 820px) 100vw, 497px"
               className={styles.portraitImage}
               priority
             />
@@ -194,7 +194,7 @@ export function AboutPageContent() {
               src={process.images.sticky}
               alt=""
               fill
-              sizes="(max-width: 767px) 100vw, 497px"
+              sizes="(max-width: 820px) 100vw, 497px"
               className={styles.processImage}
             />
           </ScrollReveal>
@@ -221,7 +221,7 @@ export function AboutPageContent() {
               src={process.images.sketch}
               alt=""
               fill
-              sizes="(max-width: 767px) 100vw, 800px"
+              sizes="(max-width: 820px) 100vw, 800px"
               className={styles.processImage}
             />
           </ScrollReveal>
@@ -274,7 +274,7 @@ export function AboutPageContent() {
               src={process.images.desk}
               alt=""
               fill
-              sizes="(max-width: 767px) 100vw, 497px"
+              sizes="(max-width: 820px) 100vw, 497px"
               className={styles.processImage}
             />
           </ScrollReveal>

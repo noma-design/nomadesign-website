@@ -246,7 +246,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   /* Figma mobile nav — 1155:9885 / open menu — 1155:10137 */
   .header {
     padding: 20px var(--content-pad) 0;

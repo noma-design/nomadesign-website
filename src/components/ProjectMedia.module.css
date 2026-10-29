@@ -20,7 +20,7 @@
   background: #838384;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .frame {
     border-radius: 16px;
   }

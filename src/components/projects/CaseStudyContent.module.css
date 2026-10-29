@@ -640,7 +640,7 @@
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .page {
     gap: var(--space-8);
   }

@@ -138,7 +138,7 @@ function renderBlock(block: CaseStudyBlock, index: number) {
                 alt={block.alt}
                 width={2400}
                 height={1600}
-                sizes="(max-width: 767px) 100vw, 1200px"
+                sizes="(max-width: 820px) 100vw, 1200px"
                 className={styles.figureImage}
               />
             </div>
@@ -159,7 +159,7 @@ function renderBlock(block: CaseStudyBlock, index: number) {
                   alt={img.alt}
                   width={2400}
                   height={1600}
-                  sizes="(max-width: 767px) 100vw, 1200px"
+                  sizes="(max-width: 820px) 100vw, 1200px"
                   className={styles.figureImage}
                 />
               </div>
@@ -304,7 +304,7 @@ export function CaseStudyContent({ data }: Props) {
                 }
                 alt={data.heroAlt}
                 fill
-                sizes="(max-width: 767px) 100vw, 1240px"
+                sizes="(max-width: 820px) 100vw, 1240px"
                 className={styles.heroImage}
                 priority
               />

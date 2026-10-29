@@ -248,7 +248,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   .grid {
     grid-template-columns: 1fr;
     gap: var(--space-7);
