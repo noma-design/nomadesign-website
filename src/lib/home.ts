@@ -41,9 +41,10 @@ export const featuredProjects = [
     href: "/projects/styches",
     tag: "UI/UX Design",
     title: "Turning the Bespoke Tailoring Journey Into a Self-Service Experience",
-    description:
-      "Transforming fragmented bespoke tailoring workflows into a unified self-service portal—connecting measurement capture, production milestone, and fitting logistics across mobile and web platforms.",
+    meta: "Service Design · Mobile & Web App",
     image: "/home/projects/styches.jpg",
+    imageTablet: "/home/projects/styches-tablet.jpg",
+    imageMobile: "/home/projects/styches-mobile.jpg",
   },
   {
     slug: "yelvio" as const,
@@ -51,9 +52,10 @@ export const featuredProjects = [
     href: "/projects/yelvio",
     tag: "UI/UX Design",
     title: "Redesigning Yelvio’s Digital Storefront for D2C Growth",
-    description:
-      "Designing and deploying a strategic holding experience for Yelvio, a direct-to-consumer brand transitioning into a broader lifestyle store, ensuring continuous sales and audience growth while the primary website is being rebuilt.",
+    meta: "D2C E-Commerce · Website Redesign",
     image: "/home/projects/yelvio.jpg",
+    imageTablet: "/home/projects/yelvio-tablet.jpg",
+    imageMobile: "/home/projects/yelvio-mobile.jpg",
   },
 ] as const;
 

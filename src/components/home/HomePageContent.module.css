@@ -431,154 +431,155 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
+  gap: var(--space-5);
   min-width: 0;
-  height: 480px;
+  height: auto;
+  min-height: min-content;
+  padding: var(--space-4) 0 var(--space-5);
   border-radius: var(--radius-lg);
-  border: none;
+  border: 1px solid var(--border-default);
   overflow: hidden;
-  background: #838384;
+  background: var(--background-surface);
+  text-decoration: none;
+  color: inherit;
 }
 
 :global([data-theme="light"]) .projectCard {
-  background: #e5e5e5;
+  border-color: transparent;
 }
 
+/* Desktop media — Figma 1182:2100 / 1182:2114 (596×480 framed export) */
 .projectMedia {
+  position: relative;
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  aspect-ratio: 596 / 480;
+  height: auto;
+  margin: 0 var(--space-4);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  /* Continuous mockup floor gray — rectangular fills, CSS clips radius */
+  background: #838484;
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+/* Desktop: framed export. Tablet/mobile: rectangular Figma crops (no baked radius). */
+.projectCover {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  border-radius: inherit;
-  overflow: hidden;
-  /* Isolate from any ancestor transform so fill sizing is stable on first paint */
-  transform: translateZ(0);
-}
-
-.projectCover {
   object-fit: cover;
   object-position: center center;
+  /* Radius only on the media frame — never bake it into the bitmap */
+  border-radius: 0;
   transition: transform 0.28s ease-out;
+}
+
+.coverDesktop {
+  display: block;
+}
+
+.coverTablet,
+.coverMobile {
+  display: none;
 }
 
 .projectCard:hover .projectCover {
   transform: scale(1.03);
 }
 
-:global([data-theme="light"]) .projectCard {
-  box-shadow: 0 1px 3px rgba(10, 10, 10, 0.06);
-}
-
-.projectScrim {
+.projectMediaTint {
   position: absolute;
   inset: 0;
-  /* Match Figma text-scrim without a hard black band at the bottom */
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.28) 0%,
-    rgba(0, 0, 0, 0.5) 55%,
-    rgba(0, 0, 0, 0.62) 100%
-  );
-  pointer-events: none;
-}
-
-.projectTag {
-  position: absolute;
-  top: 28px;
-  left: 25px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
-  font-family: var(--font-body);
-  font-size: var(--type-meta-size);
-  font-weight: 700;
-  line-height: var(--type-meta-leading);
-  color: #f5f5f5;
-}
-
-.projectText {
-  position: relative;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.projectDetails {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-5);
-  flex: 1;
+  gap: var(--space-3);
   width: 100%;
   padding: 0 var(--space-5);
-  text-align: center;
-  color: #f5f5f5;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  min-width: 0;
+}
+
+.projectTitleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  width: 100%;
 }
 
 .projectTitle {
   margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
   font-family: var(--font-display);
-  /* Title heading */
   font-size: var(--type-title-size);
   font-weight: 700;
   line-height: var(--type-title-leading);
-  color: #f5f5f5;
+  color: var(--text-primary);
+  text-align: left;
 }
 
-.projectDescription {
+.projectMeta {
   margin: 0;
   font-family: var(--font-body);
-  font-size: var(--type-body-size);
-  font-weight: 600;
-  line-height: var(--type-body-leading);
-  color: #f5f5f5;
+  font-size: var(--type-bigger-size);
+  font-weight: 400;
+  line-height: var(--type-bigger-leading);
+  color: var(--text-secondary);
+  opacity: 0.9;
+  text-align: left;
 }
 
 .projectArrow {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-full);
   border: 1px solid rgba(255, 255, 255, 0.04);
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.02);
-  transition: background 0.25s ease-out, border-color 0.25s ease-out;
+  color: var(--text-secondary);
+  transition: background 0.25s ease-out, border-color 0.25s ease-out,
+    color 0.25s ease-out;
 }
 
 :global([data-theme="light"]) .projectArrow {
   border-color: rgba(0, 0, 0, 0.08);
-  background: rgba(215, 215, 215, 0.15);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.1);
+  color: #0a0a0a;
 }
 
 .projectCard:hover .projectArrow {
   background: rgba(255, 255, 255, 0.18);
+  color: var(--text-primary);
 }
 
 :global([data-theme="light"]) .projectCard:hover .projectArrow {
-  background: rgba(215, 215, 215, 0.35);
+  background: rgba(0, 0, 0, 0.06);
 }
 
-.projectArrow img {
+.projectArrow svg {
   width: 24px;
   height: 24px;
   transition: transform 0.25s ease-out;
 }
 
-.projectCard:hover .projectArrow img {
+.projectCard:hover .projectArrow svg {
   transform: translate(2px, -2px);
 }
 
@@ -902,7 +903,7 @@
     display: none;
   }
 
-  /* Featured: full-bleed stacked cards */
+  /* Featured: stacked full-width cards (Figma 1187:2339) */
   .featured {
     gap: var(--space-6);
     padding: 0;
@@ -914,13 +915,48 @@
 
   .projectGrid {
     flex-direction: column;
-    gap: var(--space-5);
+    gap: 24px;
   }
 
   .projectCard {
     width: 100%;
-    height: 480px;
-    min-height: 480px;
+    height: auto;
+    min-height: min-content;
+    flex-shrink: 0;
+    padding: var(--space-4) 0 var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Tablet media — Figma 1187:2365 / 1187:2380 (722×480) */
+  .projectMedia {
+    width: calc(100% - 32px);
+    aspect-ratio: 722 / 480;
+    height: auto;
+    margin: 0 var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .coverDesktop,
+  .coverMobile {
+    display: none;
+  }
+
+  .coverTablet {
+    display: block;
+  }
+
+  .projectDetails {
+    padding: 0 var(--space-5);
+  }
+
+  .projectTitle {
+    font-size: var(--type-title-size);
+    line-height: var(--type-title-leading);
+  }
+
+  .projectMeta {
+    font-size: var(--type-bigger-size);
+    line-height: var(--type-bigger-leading);
   }
 
   /* Testimonials: 2-col grid — DOM order yields
@@ -1007,9 +1043,57 @@
     gap: var(--space-6);
   }
 
+  /* Featured: Figma 1155:9930 — gap 24, radius-lg card, radius-sm media, px-3 */
+  .projectGrid {
+    gap: 24px;
+  }
+
   .projectCard {
-    height: 420px;
-    border-radius: 16px;
+    height: auto;
+    min-height: min-content;
+    flex-shrink: 0;
+    gap: var(--space-5);
+    padding: var(--space-4) 0 var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Mobile media — Figma 1187:2421 / 1187:2451 (326×225), pad space-3 */
+  .projectMedia {
+    width: calc(100% - 24px);
+    aspect-ratio: 326 / 225;
+    height: auto;
+    margin: 0 var(--space-3);
+    border-radius: var(--radius-sm);
+    background: #838484;
+  }
+
+  .coverDesktop,
+  .coverTablet {
+    display: none;
+  }
+
+  .coverMobile {
+    display: block;
+  }
+
+  .projectDetails {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .projectTitle {
+    font-size: var(--type-title-size);
+    line-height: var(--type-title-leading);
+  }
+
+  .projectMeta {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-leading);
+  }
+
+  .projectArrow {
+    width: 44px;
+    height: 44px;
   }
 
   .sectionAction {
@@ -1038,10 +1122,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
-  }
-
-  .projectCard {
-    min-height: 420px;
   }
 
   .quoteCard,

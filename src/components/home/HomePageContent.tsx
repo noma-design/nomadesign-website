@@ -146,37 +146,58 @@ export function HomePageContent() {
               href={project.href}
               className={styles.projectCard}
             >
-              {/* next/image fill — reliable first paint (no % height / transform races) */}
               <div className={styles.projectMedia}>
-                <Image
-                  src={project.image}
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                  className={styles.projectCover}
-                />
-                <div className={styles.projectScrim} />
-              </div>
-
-              <span className={styles.projectTag}>{project.tag}</span>
-
-              <div className={styles.projectText}>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDescription}>
-                  {project.description}
-                </p>
-              </div>
-
-              <span className={styles.projectArrow} aria-hidden="true">
+                {/* Framed Figma exports — plain img avoids Next optimizer crop skew */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/icons/arrow-up-right-light.svg"
+                  src={`${project.image}?v=6`}
                   alt=""
-                  width={24}
-                  height={24}
+                  className={`${styles.projectCover} ${styles.coverDesktop}`}
                 />
-              </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${project.imageTablet}?v=6`}
+                  alt=""
+                  className={`${styles.projectCover} ${styles.coverTablet}`}
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${project.imageMobile}?v=6`}
+                  alt=""
+                  className={`${styles.projectCover} ${styles.coverMobile}`}
+                />
+                <div className={styles.projectMediaTint} aria-hidden="true" />
+              </div>
+
+              <div className={styles.projectDetails}>
+                <div className={styles.projectTitleRow}>
+                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <span className={styles.projectArrow} aria-hidden="true">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M11 6L18.0001 6.00024L18 13"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M18 6.00001L6.00012 18"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <p className={styles.projectMeta}>{project.meta}</p>
+              </div>
             </Link>
           ))}
         </div>
