@@ -1058,63 +1058,13 @@
     gap: var(--space-6);
   }
 
-  /* Featured: Figma 1155:9930 — gap 24, radius-lg card, radius-sm media, px-3 */
+  /* Stack Featured on Mini+phone; phone-only card chrome is ≤767 below */
   .projectGrid {
     gap: 24px;
   }
 
   .projectGrid > .projectCard {
     flex: 0 0 auto;
-  }
-
-  /* Mobile cards — Figma 1155:9930 (436×; pt 16, gap 16, media 225, details, pb 24) */
-  .projectCard {
-    height: 436px;
-    min-height: 436px; /* override tablet min-height: 640 */
-    flex-shrink: 0;
-    gap: var(--space-4);
-    padding: var(--space-4) 0 var(--space-5);
-    border-radius: var(--radius-lg);
-  }
-
-  /* Mobile media — Figma 1187:2421 / 1187:2451 (326×225), pad space-3 */
-  .projectMedia {
-    width: calc(100% - 24px);
-    height: 225px;
-    margin: 0 var(--space-3);
-    border-radius: var(--radius-sm);
-    background: #838484;
-  }
-
-  .coverDesktop,
-  .coverTablet {
-    display: none;
-  }
-
-  .coverMobile {
-    display: block;
-  }
-
-  .projectDetails {
-    padding: 0 var(--space-4);
-    gap: var(--space-3);
-    min-height: 0;
-  }
-
-  /* Typography/Mobile/Title 24 / 30 · Body 15 / 23 */
-  .projectTitle {
-    font-size: var(--type-title-size);
-    line-height: var(--type-title-leading);
-  }
-
-  .projectMeta {
-    font-size: var(--type-body-size);
-    line-height: var(--type-body-leading);
-  }
-
-  .projectArrow {
-    width: 44px;
-    height: 44px;
   }
 
   .sectionAction {
@@ -1163,5 +1113,58 @@
   .statTitle {
     font-size: 40px;
     line-height: 48px;
+  }
+}
+
+/* Phone only — compact 225px media. iPad Mini keeps tablet media (full frame). */
+@media (max-width: 767px) {
+  /* Mobile cards — Figma 1155:9930 (436×; pt 16, gap 16, media 225, details, pb 24) */
+  .projectCard {
+    height: 436px;
+    min-height: 436px;
+    flex-shrink: 0;
+    gap: var(--space-4);
+    padding: var(--space-4) 0 var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Mobile media — Figma 1187:2421 / 1187:2451 (326×225), pad space-3 */
+  .projectMedia {
+    width: calc(100% - 24px);
+    height: 225px;
+    margin: 0 var(--space-3);
+    border-radius: var(--radius-sm);
+    background: #838484;
+  }
+
+  .coverDesktop,
+  .coverTablet {
+    display: none;
+  }
+
+  .coverMobile {
+    display: block;
+  }
+
+  .projectDetails {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+    min-height: 0;
+  }
+
+  /* Typography/Mobile/Title 24 / 30 · Body 15 / 23 */
+  .projectTitle {
+    font-size: var(--type-title-size);
+    line-height: var(--type-title-leading);
+  }
+
+  .projectMeta {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-leading);
+  }
+
+  .projectArrow {
+    width: 44px;
+    height: 44px;
   }
 }
