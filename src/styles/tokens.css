@@ -166,6 +166,14 @@
   }
 }
 
+/* iPad Mini — mobile nav pill size, tablet type/pad/layout otherwise */
+@media (min-width: 768px) and (max-width: 820px) {
+  :root {
+    --nav-width: calc(100% - 40px);
+    --nav-height: 72px;
+  }
+}
+
 /* Phone only — iPad Mini (~768) keeps tablet type + content pad */
 @media (max-width: 767px) {
   :root {
