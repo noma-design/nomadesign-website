@@ -47,13 +47,13 @@ export const noma: CaseStudyData = {
     {
       type: "figure",
       caption: "The End-to-End Execution Process",
-      src: "/projects/noma/approach-process.jpg",
+      src: "/projects/noma/approach-process.png",
       alt: "End-to-end execution process diagram for the Noma Design portfolio",
     },
     {
       type: "figure",
       caption: "Constructing Core Page Layouts",
-      src: "/projects/noma/approach-layouts.jpg",
+      src: "/projects/noma/approach-layouts.png",
       alt: "Core page layout wireframes for the Noma Design portfolio",
     },
     { type: "divider" },
@@ -66,7 +66,7 @@ export const noma: CaseStudyData = {
     {
       type: "figure",
       caption: "Dual-Theme Project",
-      src: "/projects/noma/polished-dual-theme.jpg",
+      src: "/projects/noma/polished-dual-theme.png",
       alt: "Dual-theme light and dark mode showcase of the Noma Design portfolio",
     },
     { type: "divider" },
@@ -79,7 +79,7 @@ export const noma: CaseStudyData = {
     {
       type: "figure",
       caption: "From Figma Draft Layout to Code",
-      src: "/projects/noma/build-deploy.jpg",
+      src: "/projects/noma/build-deploy.png",
       alt: "Side-by-side comparison of Figma design and coded implementation",
     },
     { type: "divider" },

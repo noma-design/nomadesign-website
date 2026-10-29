@@ -10,7 +10,7 @@ export const yelvio: CaseStudyData = {
   summary:
     "Designing and deploying a strategic holding experience for Yelvio, a direct-to-consumer brand transitioning into a broader lifestyle store, ensuring continuous sales and audience growth while the primary website is being rebuilt.",
   cta: { kind: "single-link", label: "Visit Live Site", href: "https://yelvio.com/" },
-  heroImage: "/projects/yelvio/hero.jpg",
+  heroImage: "/projects/yelvio/hero.png",
   heroAlt:
     "Yelvio holding page shown across desktop and mobile devices",
   facts: [
@@ -56,7 +56,7 @@ export const yelvio: CaseStudyData = {
     {
       type: "figure",
       caption: "Regional Marketplace Routing Strategy",
-      src: "/projects/yelvio/research.jpg",
+      src: "/projects/yelvio/research.png",
       alt: "Yelvio regional marketplace routing strategy diagram",
     },
     { type: "divider" },
@@ -91,7 +91,7 @@ export const yelvio: CaseStudyData = {
     },
     {
       type: "figure",
-      src: "/projects/yelvio/polished-ui-1.jpg",
+      src: "/projects/yelvio/polished-ui-1.png",
       alt: "Yelvio regional routing UI showing country selection buttons",
       lift: true,
     },
@@ -110,7 +110,7 @@ export const yelvio: CaseStudyData = {
     },
     {
       type: "figure",
-      src: "/projects/yelvio/polished-ui-2.jpg",
+      src: "/projects/yelvio/polished-ui-2.png",
       alt: "Yelvio deployed holding page showing desktop browser view",
     },
     {

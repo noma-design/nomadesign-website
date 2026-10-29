@@ -24,7 +24,7 @@ export const jumia: CaseStudyData = {
       },
     ],
   },
-  heroImage: "/projects/jumia/hero.jpg",
+  heroImage: "/projects/jumia/hero.png",
   heroAlt:
     "Jumia empty cart redesign showing returning-user and new-visitor variants side by side",
   facts: [
@@ -87,7 +87,7 @@ export const jumia: CaseStudyData = {
     {
       type: "figure",
       caption: "Baseline Audit: The Passive Empty Cart Drop-Off",
-      src: "/projects/jumia/baseline-audit.jpg",
+      src: "/projects/jumia/baseline-audit.png",
       alt: "Current Jumia empty cart screen showing a static start-shopping button for new visitors and returning users",
     },
 
@@ -110,14 +110,14 @@ export const jumia: CaseStudyData = {
       type: "figure",
       caption:
         "Competitive Benchmark: Active Recovery Hooks in Global E-Commerce",
-      src: "/projects/jumia/competitive-benchmark.jpg",
+      src: "/projects/jumia/competitive-benchmark.png",
       alt: "Competitive benchmark comparison of empty cart recovery patterns across AliExpress, Amazon, Shein, and Temu",
     },
     {
       type: "figure",
       caption:
         "Preference Testing: Validating Active Discovery vs. Static System Feedback",
-      src: "/projects/jumia/preference-testing.jpg",
+      src: "/projects/jumia/preference-testing.png",
       alt: "Preference test results comparing active discovery hooks to static system feedback",
     },
     {
@@ -172,7 +172,7 @@ export const jumia: CaseStudyData = {
       type: "figure",
       caption:
         "The Solution: Dual-State Adaptive Empty Cart Architecture",
-      src: "/projects/jumia/polished-ui.jpg",
+      src: "/projects/jumia/polished-ui.png",
       alt: "Final polished UI showing both the returning-user and new-visitor empty cart experiences side by side",
     },
 

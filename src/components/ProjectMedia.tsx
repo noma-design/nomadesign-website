@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
 import styles from "./ProjectMedia.module.css";
 
@@ -59,13 +58,13 @@ export function ProjectMediaImage({
   priority = false,
 }: ImageProps) {
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={src}
       alt=""
-      width={2400}
-      height={1800}
-      sizes="(max-width: 767px) 100vw, (max-width: 1199px) 100vw, 628px"
-      priority={priority}
+      decoding="async"
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : "auto"}
       className={[styles.image, cropClass[crop], className]
         .filter(Boolean)
         .join(" ")}

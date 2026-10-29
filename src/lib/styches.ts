@@ -96,11 +96,11 @@ export const styches = {
     },
     serviceMapCaption:
       "Mapping the Shift from Frantic Chasing to Total Autonomy",
-    serviceMapImage: "/projects/styches/service-map.jpg",
+    serviceMapImage: "/projects/styches/service-map.png",
     dualStateNote:
       "Users split at launch between full account authentication and one-tap guest tracking via order token.",
     dualStateCaption: "Dual-State App Flow",
-    dualStateImage: "/projects/styches/dual-flow.jpg",
+    dualStateImage: "/projects/styches/dual-flow.png",
     wireframing: {
       n: "2",
       title: "Wireframing & Layout",
@@ -108,9 +108,9 @@ export const styches = {
     },
     wireframesCaption: "High-Fidelity Wireframes of Key Task Flows",
     wireframeImages: [
-      "/projects/styches/wireframes-1.jpg",
-      "/projects/styches/wireframes-2.jpg",
-      "/projects/styches/wireframes-3.jpg",
+      "/projects/styches/wireframes-1.png",
+      "/projects/styches/wireframes-2.png",
+      "/projects/styches/wireframes-3.png",
     ],
     usability: {
       n: "3",
@@ -131,9 +131,9 @@ export const styches = {
       body: "Gives clients glanceable milestone tracking on the go, with instant token-based access so they can track orders without creating an account.",
       caption: "Mobile Application Interface",
       images: [
-        "/projects/styches/mobile-1.jpg",
-        "/projects/styches/mobile-2.jpg",
-        "/projects/styches/mobile-3.jpg",
+        "/projects/styches/mobile-1.png",
+        "/projects/styches/mobile-2.png",
+        "/projects/styches/mobile-3.png",
       ],
     },
     desktop: {
@@ -142,9 +142,9 @@ export const styches = {
       body: "Adapted the mobile experience into a web app, giving clients side-by-side visibility over active orders, fittings, and measurements.",
       caption: "Desktop Web Interface",
       images: [
-        "/projects/styches/desktop-1.jpg",
-        "/projects/styches/desktop-2.jpg",
-        "/projects/styches/desktop-3.jpg",
+        "/projects/styches/desktop-1.png",
+        "/projects/styches/desktop-2.png",
+        "/projects/styches/desktop-3.png",
       ],
     },
   },

@@ -190,13 +190,8 @@ export function AboutPageContent() {
             delay={40}
             className={`${styles.processPhoto} ${styles.processSticky}`}
           >
-            <Image
-              src={process.images.sticky}
-              alt=""
-              fill
-              sizes="(max-width: 767px) 100vw, 497px"
-              className={styles.processImage}
-            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={process.images.sticky} alt="" />
           </ScrollReveal>
 
           <ScrollReveal
@@ -217,13 +212,8 @@ export function AboutPageContent() {
             delay={60}
             className={`${styles.processPhotoWide} ${styles.processSketch}`}
           >
-            <Image
-              src={process.images.sketch}
-              alt=""
-              fill
-              sizes="(max-width: 767px) 100vw, 800px"
-              className={styles.processImage}
-            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={process.images.sketch} alt="" />
           </ScrollReveal>
 
           <ScrollReveal
@@ -270,13 +260,8 @@ export function AboutPageContent() {
             delay={120}
             className={`${styles.processPhotoFlex} ${styles.processDesk}`}
           >
-            <Image
-              src={process.images.desk}
-              alt=""
-              fill
-              sizes="(max-width: 767px) 100vw, 497px"
-              className={styles.processImage}
-            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={process.images.desk} alt="" />
           </ScrollReveal>
         </div>
       </section>
