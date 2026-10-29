@@ -4,7 +4,7 @@ export const aboutHero = {
   title: "PROFILE",
   name: "Kristin Adeoti",
   body: "I am a product designer focused on creating user-centered digital experiences that are intuitive, functional, and aligned with both user needs and business goals. I design products informed by the voices of thousands of users I have supported. My approach is shaped by a strong understanding of product friction, service touch-points, and usability, combined with a commitment to thoughtful design and modern AI-enabled workflows.",
-  portrait: "/about/photos/portrait.png",
+  portrait: "/about/photos/portrait.jpg",
   socials: [
     { label: "Behance", href: site.socials.behance, icon: "/icons/behance.svg" },
     { label: "LinkedIn", href: site.socials.linkedin, icon: "/icons/linkedin.svg" },
@@ -18,29 +18,29 @@ export const outsideDesign = {
     {
       id: "fitness",
       label: "01. FITNESS",
-      image: "/about/photos/gym.png",
+      image: "/about/photos/gym.jpg",
       className: "cardGym" as const,
     },
     {
       id: "movies",
       label: "02. MOVIES  & TRUE CRIME DOCUMENTARIES",
-      image: "/about/photos/cinema.png",
+      image: "/about/photos/cinema.jpg",
       className: "cardCinema" as const,
     },
     {
       id: "karaoke",
       label: "03. KARAOKE",
-      image: "/about/photos/karaoke.png",
+      image: "/about/photos/karaoke.jpg",
       className: "cardKaraoke" as const,
     },
   ],
-  videoPoster: "/about/photos/video-poster.png",
+  videoPoster: "/about/photos/video-poster.jpg",
   videoSrc: "/about/videos/outside.mp4",
 } as const;
 
 export const whyHireMe = {
   title: "WHAT I BRING",
-  image: "/about/photos/hire-me.png",
+  image: "/about/photos/hire-me.jpg",
   items: [
     {
       title: "1. Support-grounded Empathy",
@@ -75,7 +75,7 @@ export const tools = {
   title: "PRODUCTION STACK",
   intro:
     "I build with intention — research and structure first, then design and ship. I treat my stack as a flexible toolkit, pulling what I need for the problem at hand.",
-  image: "/about/photos/workspace.png",
+  image: "/about/photos/workspace.jpg",
   items: [
     {
       name: "Adobe After Effects",
@@ -155,8 +155,8 @@ export const process = {
     },
   ],
   images: {
-    sticky: "/about/photos/process-sticky.png",
-    sketch: "/about/photos/process-sketch.png",
-    desk: "/about/photos/process-desk.png",
+    sticky: "/about/photos/process-sticky.jpg",
+    sketch: "/about/photos/process-sketch.jpg",
+    desk: "/about/photos/process-desk.jpg",
   },
 } as const;

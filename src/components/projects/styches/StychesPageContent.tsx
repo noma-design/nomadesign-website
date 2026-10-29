@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useTheme } from "@/components/ThemeProvider";
@@ -71,11 +72,14 @@ export function StychesPageContent() {
       <ScrollReveal animation="fade-up" delay={60}>
         <div className={styles.heroMediaBlock}>
           <div className={styles.mediaFrame}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={styches.heroImage}
               alt="Styches mobile and web app mockups"
+              width={2400}
+              height={1800}
+              sizes="(max-width: 767px) 100vw, 1240px"
               className={styles.mediaHero}
+              priority
             />
           </div>
 
@@ -210,10 +214,13 @@ export function StychesPageContent() {
               {styches.execution.serviceMapCaption}
             </figcaption>
             <div className={`${styles.figureFrame} ${styles.figureServiceMap}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={styches.execution.serviceMapImage}
                 alt="Service blueprint mapping before and after Styches"
+                width={2400}
+                height={1600}
+                sizes="(max-width: 767px) 100vw, 1200px"
+                className={styles.figureImage}
               />
             </div>
           </figure>
@@ -239,10 +246,13 @@ export function StychesPageContent() {
               {styches.execution.dualStateCaption}
             </figcaption>
             <div className={`${styles.figureFrame} ${styles.figureDualFlow}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={styches.execution.dualStateImage}
                 alt="Dual-state app flow diagram"
+                width={2400}
+                height={1600}
+                sizes="(max-width: 767px) 100vw, 1200px"
+                className={styles.figureImage}
               />
             </div>
           </figure>
@@ -276,10 +286,13 @@ export function StychesPageContent() {
             </p>
             {styches.execution.wireframeImages.map((src, i) => (
               <div key={src} className={styles.figureFrame}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={src}
                   alt={`High-fidelity wireframes set ${i + 1}`}
+                  width={2400}
+                  height={1600}
+                  sizes="(max-width: 767px) 100vw, 1200px"
+                  className={styles.figureImage}
                 />
               </div>
             ))}
@@ -344,8 +357,14 @@ export function StychesPageContent() {
             </p>
             {styches.polishedUi.mobile.images.map((src, i) => (
               <div key={src} className={styles.figureFrame}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`Styches mobile UI showcase ${i + 1}`} />
+                <Image
+                  src={src}
+                  alt={`Styches mobile UI showcase ${i + 1}`}
+                  width={2400}
+                  height={1600}
+                  sizes="(max-width: 767px) 100vw, 1200px"
+                  className={styles.figureImage}
+                />
               </div>
             ))}
           </div>
@@ -381,8 +400,14 @@ export function StychesPageContent() {
                 key={src}
                 className={`${styles.figureFrame} ${styles.figureDesktop}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`Styches desktop UI showcase ${i + 1}`} />
+                <Image
+                  src={src}
+                  alt={`Styches desktop UI showcase ${i + 1}`}
+                  width={2400}
+                  height={1600}
+                  sizes="(max-width: 767px) 100vw, 1200px"
+                  className={styles.figureImage}
+                />
               </div>
             ))}
           </div>

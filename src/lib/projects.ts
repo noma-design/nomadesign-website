@@ -27,7 +27,7 @@ export const projectCards = [
     title:
       "Redesigning Jumia’s Empty Cart to Increase Average Order Value (AOV)",
     meta: "E-commerce CRO · Mobile App Redesign",
-    image: "/projects/cards/jumia.png",
+    image: "/projects/cards/jumia.jpg",
   },
   {
     slug: "roam" as const,
@@ -35,14 +35,14 @@ export const projectCards = [
     title:
       "Transforming a Legacy IoT SIM Portal to Eliminate Support Friction",
     meta: "Enterprise SaaS · Web App Redesign",
-    image: "/projects/cards/roam.png",
+    image: "/projects/cards/roam.jpg",
   },
   {
     slug: "yelvio" as const,
     href: "/projects/yelvio",
     title: "Redesigning Yelvio’s Digital Storefront for D2C Growth",
     meta: "D2C E-Commerce · Website Redesign",
-    image: "/projects/cards/yelvio.png",
+    image: "/projects/cards/yelvio.jpg",
   },
   {
     slug: "mayflower" as const,
@@ -50,7 +50,7 @@ export const projectCards = [
     title:
       "From Third-Party to Custom Platform: Rebuilding Mayflower’s Web Experience",
     meta: "E-commerce & Bookings · Website Design",
-    image: "/projects/cards/mayflower.png",
+    image: "/projects/cards/mayflower.jpg",
     status: "In Progress" as const,
   },
 ] as const;

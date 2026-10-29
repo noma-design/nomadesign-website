@@ -226,6 +226,7 @@
 }
 
 .mediaFrame img,
+.heroImage,
 .heroVideo {
   position: absolute;
   inset: 0;
@@ -514,11 +515,13 @@
     0 3px 10px rgba(0, 0, 0, 0.22);
 }
 
-.figureFrame img {
+.figureFrame img,
+.figureImage {
   display: block;
   width: 100%;
   height: auto;
 }
+
 
 .figureStack {
   display: flex;

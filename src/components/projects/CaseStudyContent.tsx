@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useTheme } from "@/components/ThemeProvider";
@@ -132,8 +133,14 @@ function renderBlock(block: CaseStudyBlock, index: number) {
               className={`${styles.figureFrame}${block.lift ? ` ${styles.figureFrameLift}` : ""}`}
               style={block.frameBg ? { background: block.frameBg } : undefined}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={block.src} alt={block.alt} />
+              <Image
+                src={block.src}
+                alt={block.alt}
+                width={2400}
+                height={1600}
+                sizes="(max-width: 767px) 100vw, 1200px"
+                className={styles.figureImage}
+              />
             </div>
           </figure>
         </ScrollReveal>
@@ -147,8 +154,14 @@ function renderBlock(block: CaseStudyBlock, index: number) {
             ) : null}
             {block.images.map((img) => (
               <div key={img.src} className={styles.figureFrame}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img.src} alt={img.alt} />
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={2400}
+                  height={1600}
+                  sizes="(max-width: 767px) 100vw, 1200px"
+                  className={styles.figureImage}
+                />
               </div>
             ))}
           </div>
@@ -283,14 +296,17 @@ export function CaseStudyContent({ data }: Props) {
                 preload="auto"
               />
             ) : (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
+              <Image
                 src={
                   isLight && data.heroImageLight
                     ? data.heroImageLight
                     : data.heroImage
                 }
                 alt={data.heroAlt}
+                fill
+                sizes="(max-width: 767px) 100vw, 1240px"
+                className={styles.heroImage}
+                priority
               />
             )}
           </div>

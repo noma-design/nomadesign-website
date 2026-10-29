@@ -130,7 +130,7 @@ export const roam: CaseStudyData = {
     {
       type: "figure",
       caption: "Baseline Audit: Legacy Authentication Friction",
-      src: "/projects/roam/auth-baseline.png",
+      src: "/projects/roam/auth-baseline.jpg",
       alt: "Legacy authentication page showing usability gaps",
     },
     {
@@ -163,7 +163,7 @@ export const roam: CaseStudyData = {
     {
       type: "figure",
       caption: "Baseline Audit: The Legacy SIM Detail Page Audit",
-      src: "/projects/roam/sim-baseline.png",
+      src: "/projects/roam/sim-baseline.jpg",
       alt: "Legacy SIM detail page with scattered controls and dense data",
     },
     {
@@ -189,7 +189,7 @@ export const roam: CaseStudyData = {
     {
       type: "figure",
       caption: "New Sentinel Configuration Page",
-      src: "/projects/roam/sentinel-config.png",
+      src: "/projects/roam/sentinel-config.jpg",
       alt: "New sentinel configuration page with data thresholds and audit logs",
     },
 
