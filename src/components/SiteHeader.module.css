@@ -285,7 +285,11 @@
 
   .nav {
     height: var(--nav-height);
-    padding: 0 32px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    width: auto;
   }
 
   .logoImage {
@@ -304,7 +308,7 @@
   .contact {
     display: inline-flex;
     min-height: 44px;
-    padding: 10px 20px;
+    padding: 10px 16px;
   }
 
   .menuButton {
@@ -312,7 +316,7 @@
   }
 
   .actions {
-    gap: 12px;
+    gap: 16px;
   }
 
   .mobileMenu {
