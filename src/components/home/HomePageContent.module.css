@@ -529,6 +529,8 @@
   line-height: var(--type-title-leading);
   color: var(--text-primary);
   text-align: left;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .projectMeta {
@@ -924,19 +926,22 @@
     flex: 0 0 auto;
   }
 
-  /* Tablet cards — Figma 1187:2339 (640×, media 480 tall) */
+  /* Tablet cards — Figma 1187:2339 (754 artboard; media 722×480) */
   .projectCard {
     width: 100%;
-    height: 640px;
+    /* Grow with media aspect so cover never crops the framed exports */
+    height: auto;
+    min-height: 640px;
     flex-shrink: 0;
     padding: var(--space-4) 0 var(--space-6);
     border-radius: var(--radius-lg);
   }
 
-  /* Tablet media — Figma 1187:2365 / 1187:2380 (full width × 480) */
+  /* Tablet media — lock 722:480 so object-fit:cover fills without cutting devices */
   .projectMedia {
     width: calc(100% - 32px);
-    height: 480px;
+    aspect-ratio: 722 / 480;
+    height: auto;
     margin: 0 var(--space-4);
     border-radius: var(--radius-md);
   }
@@ -948,10 +953,14 @@
 
   .coverTablet {
     display: block;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .projectDetails {
     padding: 0 var(--space-5);
+    /* Figma details block ~96px — keeps both cards visually even */
+    min-height: 96px;
   }
 
   /* Typography/Tablet/Title 24 / normal · Bigger 18 / 22 */
