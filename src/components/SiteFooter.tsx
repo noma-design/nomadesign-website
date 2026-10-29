@@ -77,71 +77,67 @@ export function SiteFooter({ variant = "default" }: SiteFooterProps) {
             </div>
           </div>
 
-          <div className={styles.columnCenter}>
-            <div className={styles.column}>
-              <p className={styles.label}>Resume:</p>
-              <a
-                href={site.resumeUrl}
-                className={styles.resumeLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View PDF
-                <ExternalLinkIcon className={styles.externalIcon} />
-              </a>
-            </div>
+          <div className={`${styles.column} ${styles.columnCenter}`}>
+            <p className={styles.label}>Resume:</p>
+            <a
+              href={site.resumeUrl}
+              className={styles.valueRow}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View PDF
+              <ExternalLinkIcon className={styles.externalIcon} />
+            </a>
           </div>
 
-          <div className={styles.columnEnd}>
-            <div className={styles.column}>
-              <p className={styles.label}>Socials:</p>
-              <div className={styles.socials}>
-                <a
-                  href={site.socials.behance}
-                  className={styles.socialBtn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Behance"
-                >
-                  <Image
-                    src="/icons/behance.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                    className={styles.socialIcon}
-                  />
-                </a>
-                <a
-                  href={site.socials.linkedin}
-                  className={styles.socialBtn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <Image
-                    src="/icons/linkedin.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                    className={styles.socialIcon}
-                  />
-                </a>
-                <a
-                  href={site.socials.instagram}
-                  className={styles.socialBtn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <Image
-                    src="/icons/instagram.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                    className={styles.socialIcon}
-                  />
-                </a>
-              </div>
+          <div className={`${styles.column} ${styles.columnEnd}`}>
+            <p className={styles.label}>Socials:</p>
+            <div className={styles.socials}>
+              <a
+                href={site.socials.behance}
+                className={styles.socialBtn}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Behance"
+              >
+                <Image
+                  src="/icons/behance.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className={styles.socialIcon}
+                />
+              </a>
+              <a
+                href={site.socials.linkedin}
+                className={styles.socialBtn}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <Image
+                  src="/icons/linkedin.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className={styles.socialIcon}
+                />
+              </a>
+              <a
+                href={site.socials.instagram}
+                className={styles.socialBtn}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <Image
+                  src="/icons/instagram.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className={styles.socialIcon}
+                />
+              </a>
             </div>
           </div>
         </div>
