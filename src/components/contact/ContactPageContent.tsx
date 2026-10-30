@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { CopyIcon } from "@/components/icons/CopyIcon";
 import { WaveHandIcon } from "@/components/icons/WaveHandIcon";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { useTheme } from "@/components/ThemeProvider";
 import { site } from "@/lib/site";
 import styles from "./ContactPageContent.module.css";
@@ -111,16 +112,20 @@ export function ContactPageContent() {
 
   return (
     <section className={styles.page} id="message">
-      <h1
-        className={`${styles.headline}${showSuccess ? ` ${styles.headlineHiddenOnSuccess}` : ""}`}
-      >
-        Let&apos;s <span className={styles.headlineMuted}>design, build and ship</span>{" "}
-        together
-      </h1>
+      <ScrollReveal animation="fade-up">
+        <h1
+          className={`${styles.headline}${showSuccess ? ` ${styles.headlineHiddenOnSuccess}` : ""}`}
+        >
+          Let&apos;s <span className={styles.headlineMuted}>design, build and ship</span>{" "}
+          together
+        </h1>
+      </ScrollReveal>
 
       <div className={styles.layout}>
-        <div
+        <ScrollReveal
           className={`${styles.portraitCol}${showSuccess ? ` ${styles.portraitColHiddenOnSuccess}` : ""}`}
+          animation="fade-up"
+          delay={60}
         >
           <div className={styles.portraitFrame}>
             <Image
@@ -148,10 +153,12 @@ export function ContactPageContent() {
             <WaveHandIcon className={styles.waveHand} />
             <span className={styles.waveHi}>Hi</span>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div
+        <ScrollReveal
           className={`${styles.panel} ${showSuccess ? styles.panelSuccess : ""}`}
+          animation="fade-up"
+          delay={120}
         >
           {showSuccess ? (
             <SuccessOverlay fading={successFading} />
@@ -327,7 +334,7 @@ export function ContactPageContent() {
               </div>
             </>
           )}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

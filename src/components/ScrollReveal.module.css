@@ -11,6 +11,20 @@
   transform: translateY(28px);
 }
 
+@media (max-width: 820px) {
+  .fade-up {
+    transform: translateY(18px);
+  }
+
+  .fade-left {
+    transform: translateX(-16px);
+  }
+
+  .fade-right {
+    transform: translateX(16px);
+  }
+}
+
 .fade-in {
   transform: none;
 }

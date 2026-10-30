@@ -140,72 +140,75 @@ export function HomePageContent() {
 
         <div className={styles.projectGrid}>
           {featuredProjects.map((project, index) => (
-            <Link
+            <ScrollReveal
               key={project.slug}
-              href={project.href}
-              className={styles.projectCard}
+              className={styles.projectReveal}
+              animation="fade-up"
+              delay={index * 80}
             >
-              <div className={styles.projectMedia}>
-                {/* Framed Figma exports — plain img avoids Next optimizer crop skew */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`${project.image}?v=6`}
-                  alt=""
-                  className={`${styles.projectCover} ${styles.coverDesktop}`}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  decoding="async"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`${project.imageTablet}?v=6`}
-                  alt=""
-                  className={`${styles.projectCover} ${styles.coverTablet}`}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  decoding="async"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`${project.imageMobile}?v=6`}
-                  alt=""
-                  className={`${styles.projectCover} ${styles.coverMobile}`}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                />
-                <div className={styles.projectMediaTint} aria-hidden="true" />
-              </div>
-
-              <div className={styles.projectDetails}>
-                <div className={styles.projectTitleRow}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <span className={styles.projectArrow} aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M11 6L18.0001 6.00024L18 13"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M18 6.00001L6.00012 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
+              <Link href={project.href} className={styles.projectCard}>
+                <div className={styles.projectMedia}>
+                  {/* Framed Figma exports — plain img avoids Next optimizer crop skew */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${project.image}?v=6`}
+                    alt=""
+                    className={`${styles.projectCover} ${styles.coverDesktop}`}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${project.imageTablet}?v=6`}
+                    alt=""
+                    className={`${styles.projectCover} ${styles.coverTablet}`}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${project.imageMobile}?v=6`}
+                    alt=""
+                    className={`${styles.projectCover} ${styles.coverMobile}`}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                  <div className={styles.projectMediaTint} aria-hidden="true" />
                 </div>
-                <p className={styles.projectMeta}>{project.meta}</p>
-              </div>
-            </Link>
+
+                <div className={styles.projectDetails}>
+                  <div className={styles.projectTitleRow}>
+                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                    <span className={styles.projectArrow} aria-hidden="true">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M11 6L18.0001 6.00024L18 13"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M18 6.00001L6.00012 18"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <p className={styles.projectMeta}>{project.meta}</p>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
 
