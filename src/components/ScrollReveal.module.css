@@ -1,9 +1,10 @@
 .reveal {
   --reveal-delay: 0ms;
   opacity: 0;
+  /* Delay only on enter; exit reverses immediately so scroll-up feels snappy */
   transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
@@ -40,6 +41,7 @@
 .visible {
   opacity: 1;
   transform: none;
+  transition-delay: var(--reveal-delay), var(--reveal-delay);
 }
 
 @media (prefers-reduced-motion: reduce) {

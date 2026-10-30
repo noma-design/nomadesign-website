@@ -52,54 +52,59 @@ export function ScrollReveal({
   as: Tag = "div",
 }: ScrollRevealProps) {
   const ref = useRef<HTMLElement | null>(null);
-  const revealedRef = useRef(false);
   const [visible, setVisible] = useState(false);
+  /** When true, always stay visible (reduced motion / display:none at breakpoint) */
+  const lockedVisibleRef = useRef(false);
 
   useEffect(() => {
     const node = ref.current;
-    if (!node || revealedRef.current) return;
-
-    const markVisible = () => {
-      if (revealedRef.current) return;
-      revealedRef.current = true;
-      setVisible(true);
-    };
+    if (!node) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced || isEffectivelyHidden(node)) {
-      markVisible();
+      lockedVisibleRef.current = true;
+      setVisible(true);
       return;
     }
+
+    lockedVisibleRef.current = false;
 
     const rootMargin = rootMarginProp ?? adaptiveRootMargin();
     const threshold = (window.innerHeight || 800) < 560 ? 0.02 : 0.06;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          markVisible();
-          observer.unobserve(node);
-        }
+        if (lockedVisibleRef.current) return;
+        // Bidirectional: show on enter, hide on leave (scroll down or up)
+        setVisible(entry.isIntersecting);
       },
       { rootMargin, threshold },
     );
 
     observer.observe(node);
 
+    // Sync initial state (soft nav / above-the-fold)
     requestAnimationFrame(() => {
-      if (revealedRef.current) return;
-      if (isEffectivelyHidden(node) || inViewBand(node)) {
-        markVisible();
-        observer.unobserve(node);
+      if (lockedVisibleRef.current) return;
+      if (isEffectivelyHidden(node)) {
+        lockedVisibleRef.current = true;
+        setVisible(true);
+        observer.disconnect();
+        return;
       }
+      setVisible(inViewBand(node));
     });
 
     const onResize = () => {
-      if (revealedRef.current) return;
-      if (isEffectivelyHidden(node) || inViewBand(node)) {
-        markVisible();
+      if (lockedVisibleRef.current) return;
+      if (isEffectivelyHidden(node)) {
+        lockedVisibleRef.current = true;
+        setVisible(true);
         observer.disconnect();
+        return;
       }
+      // Re-evaluate after orientation / breakpoint changes
+      setVisible(inViewBand(node));
     };
     window.addEventListener("resize", onResize);
     window.addEventListener("orientationchange", onResize);
