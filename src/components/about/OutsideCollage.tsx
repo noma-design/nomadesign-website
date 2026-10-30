@@ -68,6 +68,8 @@ export function OutsideCollage() {
             <img
               src={isLight ? (lightImages[card.id] ?? card.image) : card.image}
               alt=""
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <p className={styles.collageLabel}>{card.label}</p>

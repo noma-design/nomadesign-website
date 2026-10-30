@@ -133,6 +133,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-self: flex-start;
   /* Figma email/resume/social columns — 16px label→value gap */
   gap: var(--space-4);
   min-width: 0;
@@ -141,6 +142,9 @@
 .columnCenter {
   width: 339px;
   max-width: 100%;
+  /* With Email: left · left · right */
+  align-items: flex-start;
+  text-align: left;
 }
 
 .columnEnd {
@@ -148,6 +152,7 @@
   max-width: 100%;
   margin-left: auto;
   align-items: flex-end;
+  text-align: right;
 }
 
 .label {
@@ -171,6 +176,7 @@
   align-items: center;
   gap: var(--space-2);
   max-width: 100%;
+  min-height: 36px; /* match .socialBtn so Email / Resume / Socials share one baseline */
   color: var(--text-primary);
   font-size: var(--type-card-size);
   font-weight: 600;
@@ -254,6 +260,7 @@ a.valueRow[data-pressed] {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  min-height: 36px;
 }
 
 .socialBtn {
@@ -366,7 +373,14 @@ a.valueRow[data-pressed] {
     margin-left: 0;
   }
 
-  .columnEnd {
+  /* Email on top (left); Resume under left; Socials far right */
+  .columnCenter {
     align-items: flex-start;
+    text-align: left;
+  }
+
+  .columnEnd {
+    align-items: flex-end;
+    text-align: right;
   }
 }

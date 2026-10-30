@@ -107,14 +107,13 @@ export function HomePageContent() {
                     ["--pillar-rotate" as string]: `${pillar.rotate}deg`,
                   }}
                 >
-                  <button
-                    type="button"
+                  <div
                     className={styles.pillarCard}
                     aria-label={`${pillar.label}. ${pillar.detail}`}
                   >
                     <p className={styles.pillarLabel}>{pillar.label}</p>
                     <p className={styles.pillarDetail}>{pillar.detail}</p>
-                  </button>
+                  </div>
                 </div>
               );
             })}
@@ -140,7 +139,7 @@ export function HomePageContent() {
         </ScrollReveal>
 
         <div className={styles.projectGrid}>
-          {featuredProjects.map((project) => (
+          {featuredProjects.map((project, index) => (
             <Link
               key={project.slug}
               href={project.href}
@@ -153,18 +152,26 @@ export function HomePageContent() {
                   src={`${project.image}?v=6`}
                   alt=""
                   className={`${styles.projectCover} ${styles.coverDesktop}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
                 />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${project.imageTablet}?v=6`}
                   alt=""
                   className={`${styles.projectCover} ${styles.coverTablet}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
                 />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${project.imageMobile}?v=6`}
                   alt=""
                   className={`${styles.projectCover} ${styles.coverMobile}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
                 />
                 <div className={styles.projectMediaTint} aria-hidden="true" />
               </div>

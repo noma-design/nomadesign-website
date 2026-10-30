@@ -128,6 +128,8 @@ export function ContactPageContent() {
               alt="Portrait of Kristin Adeoti"
               fill
               priority
+              fetchPriority="high"
+              quality={85}
               sizes="(max-width: 820px) 100vw, (max-width: 1199px) 306px, 497px"
               className={styles.portraitImage}
             />

@@ -40,6 +40,8 @@ export function AboutPageContent() {
               sizes="(max-width: 820px) 100vw, 497px"
               className={styles.portraitImage}
               priority
+              fetchPriority="high"
+              quality={85}
             />
           </div>
         </ScrollReveal>

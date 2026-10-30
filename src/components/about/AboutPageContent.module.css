@@ -135,12 +135,8 @@
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(18, 78, 82, 1) 0%,
-      rgba(20, 20, 20, 1) 100%
-    );
+  /* Neutral surface — avoids teal radial flash before portrait decodes */
+  background: var(--background-surface);
 }
 
 :global([data-theme="light"]) .portraitFrame,
@@ -154,6 +150,7 @@
 .portraitImage,
 .mediaImage {
   object-fit: cover;
+  object-position: top center;
 }
 
 /* ─── Outside design ───────────────────────────────────── */
@@ -527,7 +524,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: top center;
   display: block;
   cursor: pointer;
   background: #0a0a0a;
@@ -880,7 +877,7 @@
   padding: 36px;
   border-radius: 24px;
   box-sizing: border-box;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .processWide {
@@ -963,6 +960,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Prefer upper frame when height is short — keep heads / focal subjects in view */
+  object-position: center 18%;
+}
+
+/* Desk / workstation — match reference framing (shelf → her → desk, subject right) */
+.processDesk .processImage,
+.processPhotoFlex .processImage {
+  object-position: 70% 38%;
 }
 
 :global([data-theme="light"]) .processPhoto,
@@ -1011,11 +1016,12 @@
     margin: 0;
   }
 
-  /* Outside: centered video, then 2-col collage */
+  /* Outside: video on top, collage below — keep desktop magnetic animation >700 */
   .outsideGrid {
     flex-direction: column;
     align-items: stretch;
-    gap: 32px;
+    /* Clear air between video and collage (cards used to sit on ~−11px and eat the gap) */
+    gap: 28px;
     padding: 0;
   }
 
@@ -1031,68 +1037,21 @@
     margin: 0 auto;
   }
 
+  /* Collage keeps desktop absolute layout + entrance animation; scale to width */
   .collage {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    align-items: start;
+    width: min(755px, 100%);
+    max-width: 100%;
+    height: 680px;
+    margin: 0 auto;
   }
 
-  .collageGlow {
-    display: none;
-  }
-
-  .collageCard,
-  .collagePlayed .collageCard,
-  .collagePlayed .cardGym,
-  .collagePlayed .cardCinema,
-  .collagePlayed .cardKaraoke {
-    position: relative;
-    left: auto !important;
-    top: auto !important;
-    right: auto !important;
-    width: 100% !important;
-    opacity: 1;
-    transform: none !important;
-    animation: none !important;
-  }
-
+  /* Don’t let floating cards poke up into the video gap */
   .cardGym {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    margin-top: 64px;
-    padding: 12px;
-    gap: 12px;
-  }
-
-  .cardGym .collagePhoto {
-    height: auto;
-    aspect-ratio: 364 / 424;
+    top: 16px;
   }
 
   .cardCinema {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-    padding: 12px;
-  }
-
-  .cardKaraoke {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 0;
-    padding: 12px;
-  }
-
-  .cardCinema .collagePhoto,
-  .cardKaraoke .collagePhoto {
-    height: auto;
-    aspect-ratio: 338 / 238;
+    top: 128px;
   }
 
   /* Tools: photo centered above full-width list */
@@ -1118,17 +1077,25 @@
     width: 100%;
   }
 
-  /* Process: same 3-col equal cells as desktop (card 5 spans 2) */
+  /* Process: 2 per row on tablet */
   .processGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(5, 300px);
     grid-template-areas:
-      "s01 sticky s02"
-      "sketch s03 s03"
-      "s04 s05 desk";
+      "s01 sticky"
+      "s02 sketch"
+      "s03 s03"
+      "s04 s05"
+      "desk desk";
     gap: 20px;
     height: auto;
     aspect-ratio: auto;
+  }
+
+  /* Shorter cells — shift crop down onto her head (less shelf headroom) */
+  .processDesk .processImage,
+  .processPhotoFlex .processImage {
+    object-position: 72% 30%;
   }
 
   .processCard {
@@ -1175,11 +1142,17 @@
   }
 
   .hireGrid,
-  .toolsGrid,
-  .outsideGrid {
+  .toolsGrid {
     flex-direction: column;
     align-items: stretch;
     gap: var(--space-5);
+  }
+
+  .outsideGrid {
+    flex-direction: column;
+    align-items: stretch;
+    /* Keep clear space between video and collage (width-driven, incl. landscape) */
+    gap: 28px;
   }
 
   .portraitFrame,
@@ -1200,53 +1173,6 @@
     order: -1;
   }
 
-  .collage {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: none;
-    grid-template-rows: none;
-    gap: var(--space-4);
-    height: auto;
-  }
-
-  .cardGym,
-  .cardCinema,
-  .cardKaraoke {
-    grid-column: auto;
-    grid-row: auto;
-    margin-top: 0;
-  }
-
-  .cardGym .collagePhoto {
-    height: auto;
-    aspect-ratio: 364 / 424;
-  }
-
-  .cardCinema .collagePhoto,
-  .cardKaraoke .collagePhoto {
-    height: auto;
-    aspect-ratio: 338 / 238;
-  }
-
-  /* Stop fitness photo from stretching wide on mobile */
-  .cardGym .collagePhoto img {
-    inset: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .cardKaraoke .collagePhoto img {
-    inset: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .skillsRow {
     flex-direction: column;
   }
@@ -1264,6 +1190,71 @@
 
   .skillsRow:last-child .skillCell:last-child {
     border-radius: 0 0 14px 14px;
+  }
+}
+
+/* ≤700 — static stacked collage + single-column workflow */
+@media (max-width: 700px) {
+  .collage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: var(--space-4);
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .collageGlow {
+    display: none;
+  }
+
+  .collageCard,
+  .collagePlayed .collageCard,
+  .collagePlayed .cardGym,
+  .collagePlayed .cardCinema,
+  .collagePlayed .cardKaraoke {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    opacity: 1;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .cardGym,
+  .cardCinema,
+  .cardKaraoke {
+    grid-column: auto;
+    grid-row: auto;
+    margin-top: 0;
+    margin: 0;
+    padding: 12px;
+  }
+
+  .cardGym .collagePhoto {
+    height: auto;
+    aspect-ratio: 364 / 424;
+  }
+
+  .cardCinema .collagePhoto,
+  .cardKaraoke .collagePhoto {
+    height: auto;
+    aspect-ratio: 338 / 238;
+  }
+
+  .cardGym .collagePhoto img,
+  .cardKaraoke .collagePhoto img {
+    inset: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .processGrid {

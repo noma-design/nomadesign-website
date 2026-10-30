@@ -56,7 +56,7 @@ export function SiteFooter({ variant = "default" }: SiteFooterProps) {
 
         <div className={styles.metaRow}>
           <div className={styles.column}>
-            <p className={styles.label}>Email:</p>
+            <p className={styles.label}>Email</p>
             <div className={styles.emailValueWrap}>
               {copied ? (
                 <span className={styles.copiedTooltip} role="status">
@@ -78,7 +78,7 @@ export function SiteFooter({ variant = "default" }: SiteFooterProps) {
           </div>
 
           <div className={`${styles.column} ${styles.columnCenter}`}>
-            <p className={styles.label}>Resume:</p>
+            <p className={styles.label}>Resume</p>
             <a
               href={site.resumeUrl}
               className={styles.valueRow}
@@ -91,7 +91,7 @@ export function SiteFooter({ variant = "default" }: SiteFooterProps) {
           </div>
 
           <div className={`${styles.column} ${styles.columnEnd}`}>
-            <p className={styles.label}>Socials:</p>
+            <p className={styles.label}>Socials</p>
             <div className={styles.socials}>
               <a
                 href={site.socials.behance}
